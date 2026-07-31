@@ -1,0 +1,852 @@
+[
+  {
+    "id": 55,
+    "buildNumber": 55,
+    "title": "Framer Motion Animated Portfolio",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React",
+      "Vue",
+      "Svelte",
+      "Angular"
+    ],
+    "description": "**Framer Motion Animated Portfolio (Build 55)** is an interactive, theme-switchable glassmorphism portfolio application engineered with **React 19**, **Frame...",
+    "githubUrl": "https://github.com/breakingthebot/build-55",
+    "demoUrl": "https://build-55.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 54,
+    "buildNumber": 54,
+    "title": "Styled Components Theme-able UI Kit",
+    "category": "UI Libraries & Design Systems",
+    "tech": [
+      "React",
+      "styled-components",
+      "Vite"
+    ],
+    "description": "**Styled Components UI Kit (Build 54)** is a standalone, production-grade **React UI Component Library** engineered using **styled-components (CSS-in-JS)** t...",
+    "githubUrl": "https://github.com/breakingthebot/build-54",
+    "demoUrl": "https://build-54.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 53,
+    "buildNumber": 53,
+    "title": "ModulaUI \u2014 React CSS Modules Component Library",
+    "category": "UI Libraries & Design Systems",
+    "tech": [
+      "React",
+      "CSS Modules",
+      "Vite"
+    ],
+    "description": "**ModulaUI** is a standalone, production-grade **React UI Component Library** engineered specifically to demonstrate scoped CSS Modules architecture (`*.modu...",
+    "githubUrl": "https://github.com/breakingthebot/build-53",
+    "demoUrl": "https://build-53.vercel.app",
+    "featured": true,
+    "depth": "Standard"
+  },
+  {
+    "id": 52,
+    "buildNumber": 52,
+    "title": "ApexAdmin \u2014 Enterprise Tailwind CSS Admin Dashboard",
+    "category": "UI Libraries & Design Systems",
+    "tech": [
+      "TailwindCSS"
+    ],
+    "description": "**ApexAdmin** is a standalone, enterprise-grade **Tailwind CSS Admin Dashboard System** engineered to showcase production-ready utility-first CSS architectur...",
+    "githubUrl": "https://github.com/breakingthebot/build-52",
+    "demoUrl": "https://build-52.vercel.app",
+    "featured": true,
+    "depth": "Expanded"
+  },
+  {
+    "id": 51,
+    "buildNumber": 51,
+    "title": "AGENTS.md \u2014 Build Standards & Conventions",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python",
+      "Node.js",
+      "TypeScript"
+    ],
+    "description": "This file defines the non-negotiable standards for every project in this repository.\nAll code generated, reviewed, or modified must conform to these rules wi...",
+    "githubUrl": "https://github.com/breakingthebot/build-51",
+    "demoUrl": "https://build-51.vercel.app",
+    "featured": true,
+    "depth": "Standard"
+  },
+  {
+    "id": 50,
+    "buildNumber": 50,
+    "title": "Breaking The Bot \u2014 TikTok Character Worldbuilding Multiverse",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React"
+    ],
+    "description": "**Breaking The Bot** is a content creator landing page showcasing an immersive sci-fi character worldbuilding universe told across **7 interconnected TikTok ...",
+    "githubUrl": "https://github.com/breakingthebot/build-50",
+    "demoUrl": "https://build-50.vercel.app",
+    "featured": true,
+    "depth": "Expanded"
+  },
+  {
+    "id": 49,
+    "buildNumber": 49,
+    "title": "Qwik E-Commerce Product Page",
+    "category": "Minimal Frameworks & HTMX",
+    "tech": [
+      "Alpine.js",
+      "Vite"
+    ],
+    "description": "**Nexus Cyber E-Commerce** is a high-performance, instant-loading product page powered by **Qwik** (`@builder.io/qwik`). Engineered for zero hydration execut...",
+    "githubUrl": "https://github.com/breakingthebot/build-49",
+    "demoUrl": "https://build-49.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 48,
+    "buildNumber": 48,
+    "title": "\ud83d\udcc5 Lit Reusable Web Component Date Picker \u2014 Build 48",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React",
+      "Vue",
+      "Svelte",
+      "Angular"
+    ],
+    "description": "**NexusCloud Lit Reusable Date Picker** is an enterprise-grade, framework-agnostic Shadow DOM Web Component built with **Lit 3.x**. Designed for seamless int...",
+    "githubUrl": "https://github.com/breakingthebot/build-48",
+    "demoUrl": "https://build-48.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 47,
+    "buildNumber": 47,
+    "title": "\u26a1 Build 47: NexusCloud Enterprise AI \u2014 Alpine.js Interactive Knowledge Base",
+    "category": "Minimal Frameworks & HTMX",
+    "tech": [
+      "Alpine.js",
+      "Python",
+      "Node.js",
+      "Vite"
+    ],
+    "description": "**NexusCloud Interactive Knowledge Base & FAQ Center** is a modern enterprise documentation portal built with **Alpine.js 3.x** and **Express.js**. Designed ...",
+    "githubUrl": "https://github.com/breakingthebot/build-47",
+    "demoUrl": "https://build-47.vercel.app",
+    "featured": true,
+    "depth": "Standard"
+  },
+  {
+    "id": 46,
+    "buildNumber": 46,
+    "title": "\ud83d\udcc7 Build 46 \u2014 HTMX Contact Manager & Creator CRM",
+    "category": "Minimal Frameworks & HTMX",
+    "tech": [
+      "React",
+      "Vue",
+      "Angular",
+      "HTMX"
+    ],
+    "description": "**HTMX Contact Manager** (Build 46) is a high-performance, dark glassmorphism Contact & Creator CRM web application. Engineered without heavy client-side Jav...",
+    "githubUrl": "https://github.com/breakingthebot/build-46",
+    "demoUrl": "https://build-46.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 45,
+    "buildNumber": 45,
+    "title": "Starlight Starter Kit: Basics",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "```\nnpm create astro@latest -- --template starlight\n```",
+    "githubUrl": "https://github.com/breakingthebot/build-45",
+    "demoUrl": "https://build-45.vercel.app",
+    "featured": true,
+    "depth": "Standard"
+  },
+  {
+    "id": 44,
+    "buildNumber": 44,
+    "title": "Solid.js Real-time Clock Dashboard",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "A high-performance real-time clock dashboard built with **Solid.js**, **Vite**, and **TypeScript**, featuring fine-grained reactive updates, multiple timezon...",
+    "githubUrl": "https://github.com/breakingthebot/build-44",
+    "demoUrl": "https://build-44.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 43,
+    "buildNumber": 43,
+    "title": "SvelteKit Notes Vault \u2014 Full Stack Notes & Tag Manager",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Svelte",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "A full-stack server-rendered notes application built with SvelteKit 5, TypeScript, and Vanilla CSS. Features server-side data loading (`+page.server.ts`), Sv...",
+    "githubUrl": "https://github.com/breakingthebot/build-43",
+    "demoUrl": "https://build-43.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 42,
+    "buildNumber": 42,
+    "title": "WordCraft \u2014 Reactive Svelte Live Word, Character & Readability Counter",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React",
+      "Svelte",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "A lightning-fast, reactive text analysis tool built with Svelte 4 (`^4.2.0`), Vite, and TypeScript. Provides live character, word, sentence, and paragraph co...",
+    "githubUrl": "https://github.com/breakingthebot/build-42",
+    "demoUrl": "https://build-42.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 41,
+    "buildNumber": 41,
+    "title": "\u2014 GourmetPulse SEO Culinary Recipe Application",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Vue",
+      "Vite"
+    ],
+    "description": "GourmetPulse is an SEO-optimized culinary recipe web application built with Nuxt 3, Vue 3, Pinia, and Schema.org JSON-LD structured data.",
+    "githubUrl": "https://github.com/breakingthebot/build-41",
+    "demoUrl": "https://build-41.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 40,
+    "buildNumber": 40,
+    "title": "PulseTask \u2014 Pinia Task & Project Manager",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Vue",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "PulseTask is a modern, reactive Progressive Web Application (PWA) built with Vue 3, Pinia global state management, and TypeScript. It features project organi...",
+    "githubUrl": "https://github.com/breakingthebot/build-40",
+    "demoUrl": "https://build-40.vercel.app",
+    "featured": true,
+    "depth": "Expanded"
+  },
+  {
+    "id": 39,
+    "buildNumber": 39,
+    "title": "\u2014 TravelPulse Vue Router Multi-Page Travel Blog",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Vue",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "TravelPulse is a multi-page travel journal and destination discovery web application built with Vue 3, Vue Router 4, Pinia, and Vitest.",
+    "githubUrl": "https://github.com/breakingthebot/build-39",
+    "demoUrl": "https://build-39.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 38,
+    "buildNumber": 38,
+    "title": "PulseMovie \u2014 Movie Watchlist Dashboard",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Vue",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "A high-performance, responsive movie watchlist dashboard built with **Vue 3** and **TypeScript**, powered by Vite. The application supports API-based movie s...",
+    "githubUrl": "https://github.com/breakingthebot/build-38",
+    "demoUrl": "https://build-38.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 37,
+    "buildNumber": 37,
+    "title": "PulseFit \u2014 Hybrid Fitness Tracker App",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Angular"
+    ],
+    "description": "A hybrid mobile application built with **Ionic 8** and **Angular 19 (Standalone)**, powered by Capacitor. The application features daily metrics gauges, a wo...",
+    "githubUrl": "https://github.com/breakingthebot/build-37",
+    "demoUrl": "https://build-37.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 36,
+    "buildNumber": 36,
+    "title": "PulseMarket - Reactive E-Commerce Platform with NgRx State Management",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React",
+      "Angular"
+    ],
+    "description": "PulseMarket is a high-performance, mobile-responsive e-commerce application built with Angular 19, Angular Material, and reactive state management powered by...",
+    "githubUrl": "https://github.com/breakingthebot/build-36",
+    "demoUrl": "https://build-36.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 35,
+    "buildNumber": 35,
+    "title": "Angular Material Dashboard UI",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Angular",
+      "TypeScript"
+    ],
+    "description": "A premium enterprise administration dashboard interface built using Angular 19 and the Angular Material components library. Demonstrates structured layout de...",
+    "githubUrl": "https://github.com/breakingthebot/build-35",
+    "demoUrl": "https://build-35.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 34,
+    "buildNumber": 34,
+    "title": "InstantCatalog \u2014 RxJS Real-Time Search Engine",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Angular",
+      "Vite"
+    ],
+    "description": "A premium, responsive search catalog application leveraging Angular 21, reactive signals, and RxJS pipelines to query mock databases with simulated microserv...",
+    "githubUrl": "https://github.com/breakingthebot/build-34",
+    "demoUrl": "https://build-34.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 33,
+    "buildNumber": 33,
+    "title": "Multi-Section Admin Panel",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Angular",
+      "Vite"
+    ],
+    "description": "A premium enterprise administration dashboard built on Angular 19, demonstrating advanced client-side routing, route guard protection, dynamic breadcrumbs na...",
+    "githubUrl": "https://github.com/breakingthebot/build-33",
+    "demoUrl": "https://build-33.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 32,
+    "buildNumber": 32,
+    "title": "Interactive Course Syllabus Viewer",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "Angular",
+      "TypeScript"
+    ],
+    "description": "A premium, interactive, and structured academic course syllabus viewer built with Angular 19. It helps students track weekly required readings, assignment de...",
+    "githubUrl": "https://github.com/breakingthebot/build-32",
+    "demoUrl": "https://build-32.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 31,
+    "buildNumber": 31,
+    "title": "Expense Tracker",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "React",
+      "Node.js",
+      "TypeScript"
+    ],
+    "description": "A React Native (Expo) mobile app for logging expenses and browsing them, with everything stored locally on the device.",
+    "githubUrl": "https://github.com/breakingthebot/build-31",
+    "demoUrl": "https://build-31.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 30,
+    "buildNumber": 30,
+    "title": "Remix Todo",
+    "category": "Web Components & Micro-frontends",
+    "tech": [
+      "React",
+      "Lit",
+      "Node.js",
+      "TypeScript"
+    ],
+    "description": "A todo list web app you run yourself. You open it in a browser, type a task\nand hit \"Add,\" and it shows up in a list. You can check tasks off or delete\nthem ...",
+    "githubUrl": "https://github.com/breakingthebot/build-30",
+    "demoUrl": "https://build-30.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 29,
+    "buildNumber": 29,
+    "title": "Next.js Blog Platform",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "React",
+      "Node.js",
+      "Vite"
+    ],
+    "description": "A blog platform built with Next.js: statically generated posts, a server-rendered post page with live comments, and an API route for posting them.",
+    "githubUrl": "https://github.com/breakingthebot/build-29",
+    "demoUrl": "https://build-29.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 28,
+    "buildNumber": 28,
+    "title": "GitHub Dashboard",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "React",
+      "Node.js",
+      "Vite"
+    ],
+    "description": "Search any GitHub user's public repos, with real caching, background refetch, loading/error states, and infinite-scroll-style pagination \u2014 powered by TanStac...",
+    "githubUrl": "https://github.com/breakingthebot/build-28",
+    "demoUrl": "https://build-28.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 27,
+    "buildNumber": 27,
+    "title": "Aetheric Space - React & Zustand Shopping Cart",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "React",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "A premium, high-fidelity e-commerce shopping cart interface with a responsive product catalog, interactive cart drawer, and validation-backed checkout flow.",
+    "githubUrl": "https://github.com/breakingthebot/build-27",
+    "demoUrl": "https://build-27.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 26,
+    "buildNumber": 26,
+    "title": "Portfolio Site",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "React",
+      "Node.js",
+      "Vite"
+    ],
+    "description": "Personal portfolio site \u2014 home, projects, blog, and contact pages with client-side routing.",
+    "githubUrl": "https://github.com/breakingthebot/build-26",
+    "demoUrl": "https://build-26.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 25,
+    "buildNumber": 25,
+    "title": "FlavorFind",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "React",
+      "Node.js",
+      "Vite"
+    ],
+    "description": "FlavorFind is a premium, responsive React-based recipe search web application designed to help users discover meals based on ingredients they have on hand, w...",
+    "githubUrl": "https://github.com/breakingthebot/build-25",
+    "demoUrl": "https://build-25.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  },
+  {
+    "id": 24,
+    "buildNumber": 24,
+    "title": "SQL Analytics Query Library",
+    "category": "Web Components & Micro-frontends",
+    "tech": [
+      "Lit",
+      "Python"
+    ],
+    "description": "A Python library containing complex analytical SQL queries against an e-commerce database, complete with a realistic mock data generator and interactive CLI ...",
+    "githubUrl": "https://github.com/breakingthebot/build-24",
+    "demoUrl": "https://build-24.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 23,
+    "buildNumber": 23,
+    "title": "Server Setup Script",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "A robust, portable, and testable Bash script designed to automate initial server configurations, install essential dependencies, set up environment configura...",
+    "githubUrl": "https://github.com/breakingthebot/build-23",
+    "demoUrl": "https://build-23.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 22,
+    "buildNumber": 22,
+    "title": "hammerspoon-config",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "Personal Hammerspoon automation for macOS \u2014 hotkey-driven window snapping, multi-monitor support, and an app launcher.",
+    "githubUrl": "https://github.com/breakingthebot/build-22",
+    "demoUrl": "https://build-22.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 21,
+    "buildNumber": 21,
+    "title": "Quick Notes",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "Quick Notes is a Kotlin Android app for creating, editing, tagging, archiving, restoring, deleting, searching, and sorting personal notes with local Room sto...",
+    "githubUrl": "https://github.com/breakingthebot/build-21",
+    "demoUrl": "https://build-21.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 20,
+    "buildNumber": 20,
+    "title": "Habit Tracker iOS App",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "A SwiftUI habit tracker that lets you add habits, rename or delete them, search and filter the list, mark daily completion, inspect and edit habit history, s...",
+    "githubUrl": "https://github.com/breakingthebot/build-20",
+    "demoUrl": "https://build-20.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 19,
+    "buildNumber": 19,
+    "title": "Budget Tracker Console App",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "A .NET 8 console app for tracking configurable expense categories, saving data locally, checking category targets, editing monthly budget targets, auditing a...",
+    "githubUrl": "https://github.com/breakingthebot/build-19",
+    "demoUrl": "https://build-19.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 18,
+    "buildNumber": 18,
+    "title": "Library Catalog",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "Java command-line library catalog that models books and members, supports interactive checkout commands, and persists catalog state to a flat file.",
+    "githubUrl": "https://github.com/breakingthebot/build-18",
+    "demoUrl": "https://build-18.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 17,
+    "buildNumber": 17,
+    "title": "Log File Analyzer",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "Reads common server access logs or newline-delimited JSON logs and reports request counts, error rates, method breakdowns, status breakdowns, and top endpoin...",
+    "githubUrl": "https://github.com/breakingthebot/build-17",
+    "demoUrl": "https://build-17.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 16,
+    "buildNumber": 16,
+    "title": "README.md",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "CLI tool that walks a directory tree, hashes file contents, and reports duplicate files.",
+    "githubUrl": "https://github.com/breakingthebot/build-16",
+    "demoUrl": "https://build-16.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 15,
+    "buildNumber": 15,
+    "title": "URL Shortener API",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "Go API that stores short links in PostgreSQL, supports optional custom aliases, expiration dates, soft deletes, reuses duplicate URLs, redirects visitors, tr...",
+    "githubUrl": "https://github.com/breakingthebot/build-15",
+    "demoUrl": "https://build-15.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 14,
+    "buildNumber": 14,
+    "title": "PHP Contact Form Backend",
+    "category": "Web Applications & PWAs",
+    "tech": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "description": "Receives contact form submissions, validates them, stores them in MySQL, and dispatches an email notification through a modular PHP backend.",
+    "githubUrl": "https://github.com/breakingthebot/build-14",
+    "demoUrl": "https://build-14.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 13,
+    "buildNumber": 13,
+    "title": "string-utils-jest",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Node.js",
+      "TypeScript"
+    ],
+    "description": "Professional JavaScript string utility library with a Jest suite covering 20 reusable string manipulation functions.",
+    "githubUrl": "https://github.com/breakingthebot/build-13",
+    "demoUrl": "https://build-13.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 12,
+    "buildNumber": 12,
+    "title": "GitHub Profile Viewer",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Node.js",
+      "Vite"
+    ],
+    "description": "A vanilla JavaScript app that fetches a GitHub user's profile, repositories, and recent public activity from the GitHub API, then lets you explore repositori...",
+    "githubUrl": "https://github.com/breakingthebot/build-12",
+    "demoUrl": "https://build-12.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 11,
+    "buildNumber": 11,
+    "title": "Modular Music Player",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Node.js"
+    ],
+    "description": "A browser-based music player built with native ES modules, modular JavaScript files, and no bundler.",
+    "githubUrl": "https://github.com/breakingthebot/build-11",
+    "demoUrl": "https://build-11.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 10,
+    "buildNumber": 10,
+    "title": "Typed Task Manager",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Node.js",
+      "TypeScript",
+      "Vite"
+    ],
+    "description": "<!--\nREADME.md\nExplains project purpose, setup, operation, and architecture.\nConnects to: package.json, src/, tests/, CHANGELOG.md\nCreated: 2026-06-18\n-->",
+    "githubUrl": "https://github.com/breakingthebot/build-10",
+    "demoUrl": "https://build-10.vercel.app",
+    "featured": true,
+    "depth": "Expanded"
+  },
+  {
+    "id": 9,
+    "buildNumber": 9,
+    "title": "Kanban Board",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Node.js"
+    ],
+    "description": "<!--\nREADME.md\nDocuments setup, operation, testing, and architecture for the Kanban board.\nConnects to: the complete project and its development workflow.\nCr...",
+    "githubUrl": "https://github.com/breakingthebot/build-9",
+    "demoUrl": "https://build-9.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 8,
+    "buildNumber": 8,
+    "title": "Tested Calculator",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "A small installable Python calculator library with a CLI, optional calculation history, explicit error handling, and a full pytest suite.",
+    "githubUrl": "https://github.com/breakingthebot/build-8",
+    "demoUrl": "https://build-8.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 7,
+    "buildNumber": 7,
+    "title": "Dev Toolkit",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "A Click-based Python CLI for common developer utilities.",
+    "githubUrl": "https://github.com/breakingthebot/built-7",
+    "demoUrl": "https://built-7.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 6,
+    "buildNumber": 6,
+    "title": "House Price Predictor",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "<!-- README.md -->\n<!-- Documents setup, usage, architecture, and manual testing steps. -->\n<!-- Connects to: pyproject.toml, src/house_price_predictor/, tes...",
+    "githubUrl": "https://github.com/breakingthebot/build-6",
+    "demoUrl": "https://build-6.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 5,
+    "buildNumber": 5,
+    "title": "Chat Server",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "A Python TCP socket chat server and interactive client with multi-user broadcast messaging.",
+    "githubUrl": "https://github.com/breakingthebot/build-5",
+    "demoUrl": "https://build-5.vercel.app",
+    "featured": true,
+    "depth": "Standard"
+  },
+  {
+    "id": 4,
+    "buildNumber": 4,
+    "title": "Folder Organizer",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "Watches a downloads folder and automatically sorts files by type into subfolders.",
+    "githubUrl": "https://github.com/breakingthebot/build-4",
+    "demoUrl": "https://build-4.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 3,
+    "buildNumber": 3,
+    "title": "Sales Dashboard",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "A Python data project that turns a sales CSV into a static dashboard with summary metrics, trend charts, and product performance tables.",
+    "githubUrl": "https://github.com/breakingthebot/build-3",
+    "demoUrl": "https://build-3.vercel.app",
+    "featured": false,
+    "depth": "Standard"
+  },
+  {
+    "id": 2,
+    "buildNumber": 2,
+    "title": "Async News Aggregator",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "An async Python CLI that fetches recent headlines from five public news sources at the same time and ranks them by recency.",
+    "githubUrl": "https://github.com/breakingthebot/build-2",
+    "demoUrl": "https://build-2.vercel.app",
+    "featured": false,
+    "depth": "Expanded"
+  },
+  {
+    "id": 1,
+    "buildNumber": 1,
+    "title": "Core Python Expense Tracker CLI",
+    "category": "CLI Tools & Backend Engines",
+    "tech": [
+      "Python"
+    ],
+    "description": "<!--\nREADME.md\nDocuments setup, usage, architecture, and learning notes for the expense tracker CLI.\nConnects to: src/expense_tracker/main.py, .env.example, ...",
+    "githubUrl": "https://github.com/breakingthebot/build-1",
+    "demoUrl": "https://build-1.vercel.app",
+    "featured": true,
+    "depth": "Deep"
+  }
+]

@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.11.0] - 2026-07-31
+
+### Added
+- Integrated **Full 55 Builds Catalog Dataset (`extracted_builds.json`, `buildsData.js`)**.
+- Expanded showcase catalog from 11 sample repos to all 55 completed builds in the series (Build 1 through Build 55).
+- Extracted public titles, descriptions, tech stack tags, GitHub URLs, and live demo links for all 55 projects.
+
 ## [1.10.0] - 2026-07-31
 
 ### Added
