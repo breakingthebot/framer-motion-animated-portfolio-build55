@@ -1,0 +1,44 @@
+/* src/components/CategoryFilter.css */
+.category-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 8px 4px 16px;
+  margin-bottom: 24px;
+  max-width: 100%;
+}
+
+.cat-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-glass);
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.cat-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cat-btn.selected {
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.cat-pill-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(56, 189, 248, 0.12);
+  border-radius: 9999px;
+  z-index: -1;
+}

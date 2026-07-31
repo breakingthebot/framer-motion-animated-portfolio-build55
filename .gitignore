@@ -1,0 +1,15 @@
+# SOP Guidelines Exclusions (MUST NOT BE COMMITTED OR PUSHED TO GIT)
+AGENTS.md
+BUILD_NOTES.md
+BUILD_NOTES_*.md
+
+# Local & Environment Files
+.env
+.env.local
+.env.*.local
+
+# Dependency & Build Artifacts
+node_modules/
+dist/
+.vercel
+*.log
