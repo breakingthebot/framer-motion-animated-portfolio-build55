@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Sparkles, Code2, Layers, Github, Mail } from 'lucide-react';
+import { Cpu, Gauge, Sparkles, Code2, Layers, Github, Mail } from 'lucide-react';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { SoundToggle } from './SoundToggle';
 import { playClickSound, playTabSound } from '../utils/soundFX';
@@ -17,6 +17,7 @@ import './Navbar.css';
 export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleTheme, onOpenContact }) => {
   const navLinks = [
     { id: 'casestudies', label: 'Enterprise Case Studies', icon: Cpu },
+    { id: 'benchmarks', label: 'Performance Matrix', icon: Gauge },
     { id: 'featured', label: 'Featured Repos', icon: Sparkles },
     { id: 'catalog', label: '246 Build Index', icon: Code2 },
     { id: 'tech', label: 'Tech Stack', icon: Layers },

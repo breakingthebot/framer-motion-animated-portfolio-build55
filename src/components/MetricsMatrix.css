@@ -1,0 +1,237 @@
+/* src/components/MetricsMatrix.css */
+/* Styles for Interactive Performance Benchmarks & SLA Metrics Matrix */
+
+.metrics-matrix-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.12));
+  border-radius: 24px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  margin-bottom: 30px;
+}
+
+.matrix-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+  padding-bottom: 20px;
+}
+
+.matrix-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.matrix-kicker {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #38bdf8;
+}
+
+.matrix-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary, #ffffff);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.matrix-icon {
+  color: #38bdf8;
+}
+
+/* METRIC SELECTION TABS */
+.metric-tabs-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.metric-tab-btn {
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary, #cbd5e1);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.metric-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.metric-tab-btn.active {
+  background: #38bdf8;
+  color: #041220;
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* MATRIX BODY */
+.matrix-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.matrix-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.filter-chips-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted, #94a3b8);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.filter-chip.active {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+}
+
+/* BARS CONTAINER */
+.matrix-bars-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.matrix-bar-row {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .matrix-bar-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.bar-label-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fw-name {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.fw-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid;
+  width: fit-content;
+}
+
+.bar-track-col {
+  height: 36px;
+  background: rgba(8, 12, 20, 0.6);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.bar-val-text {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #041220;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+/* FOOTER INSIGHTS */
+.matrix-insights-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-glass, rgba(255, 255, 255, 0.1));
+}
+
+.insight-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: rgba(8, 12, 20, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: var(--text-secondary, #cbd5e1);
+}
+
+.insight-icon {
+  color: #38bdf8;
+}
+
+.insight-icon.green {
+  color: #34d399;
+}
+
+.insight-pill strong {
+  color: #ffffff;
+}

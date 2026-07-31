@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [2.4.0] - 2026-07-31
+
+### Added
+- Integrated **Interactive Production Performance Benchmarks & SLA Metrics Matrix (`benchmarksData.js`, `MetricsMatrix.jsx`, `MetricsMatrix.css`)**.
+- Built framework comparison metrics dashboard comparing Rust WASM, Go, Lit 3 Web Components, Svelte 5, Vue 3, and React 19 across Cold Start, Memory Footprint, P99 Throughput, and Bundle Size.
+- Added "Performance Matrix" tab to top floating navigation bar (`Navbar.jsx`).
+
 ## [2.3.0] - 2026-07-31
 
 ### Added

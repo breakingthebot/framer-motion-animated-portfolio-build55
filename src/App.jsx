@@ -23,6 +23,7 @@ import { CaseStudyCard } from './components/CaseStudyCard';
 import { CaseStudyModal } from './components/CaseStudyModal';
 import { ContactBookingModal } from './components/ContactBookingModal';
 import { FullSandboxModal } from './components/FullSandboxModal';
+import { MetricsMatrix } from './components/MetricsMatrix';
 import { buildsList } from './data/buildsData';
 import { caseStudiesList } from './data/caseStudiesData';
 import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3, Command, Cpu } from 'lucide-react';
@@ -174,6 +175,11 @@ export function App() {
               />
             ))}
           </div>
+        </section>
+
+        {/* SECTION 0.5: PERFORMANCE BENCHMARKS MATRIX (NEW v2.4.0) */}
+        <section id="benchmarks" className="section-container">
+          <MetricsMatrix />
         </section>
 
         {/* SECTION 1: CATALOG & SEARCH BAR */}
