@@ -1,5 +1,6 @@
 // src/App.jsx
 // Main Interactive Portfolio for Build 55: 246 Builds Framer Motion Showcase.
+// Connects to: src/components/*, src/data/buildsData.js
 // Created: 2026-07-31
 
 import React, { useState, useEffect } from 'react';
@@ -15,10 +16,14 @@ import { TimelineView } from './components/TimelineView';
 import { CompareModal } from './components/CompareModal';
 import { PortfolioExport } from './components/PortfolioExport';
 import { ParticleCanvas } from './components/ParticleCanvas';
+import { CollectionsModal } from './components/CollectionsModal';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download } from 'lucide-react';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, Heart } from 'lucide-react';
 import './App.css';
 
+/**
+ * Main App component orchestrating the 246 builds showcase portfolio.
+ */
 export function App() {
   const [activeSection, setActiveSection] = useState('featured');
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
@@ -27,8 +32,16 @@ export function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
+  const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
+  const [onlyBookmarked, setOnlyBookmarked] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
   const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
+
+  // Bookmarks stored in localStorage
+  const [bookmarkedIds, setBookmarkedIds] = useState(() => {
+    const saved = localStorage.getItem('build_55_bookmarks');
+    return saved ? JSON.parse(saved) : [55, 54, 50];
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', themeMode);
@@ -36,6 +49,19 @@ export function App() {
 
   const toggleTheme = () => {
     setThemeMode((prev) => (prev === 'cyber-dark' ? 'neon-light' : 'cyber-dark'));
+  };
+
+  /**
+   * Toggles bookmark status for a given build ID.
+   * @param {number} id - Build ID to toggle.
+   */
+  const handleToggleBookmark = (id) => {
+    setBookmarkedIds((prev) => {
+      const exists = prev.includes(id);
+      const updated = exists ? prev.filter((bId) => bId !== id) : [...prev, id];
+      localStorage.setItem('build_55_bookmarks', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const handleTechToggle = (tech) => {
@@ -48,9 +74,15 @@ export function App() {
     setSearchQuery('');
     setSelectedTech([]);
     setSelectedCategory('All Categories');
+    setOnlyBookmarked(false);
   };
 
   const filteredBuilds = buildsList.filter((b) => {
+    // 0. Only Bookmarked Filter
+    if (onlyBookmarked && !bookmarkedIds.includes(b.id)) {
+      return false;
+    }
+
     // 1. Category Filter
     if (selectedCategory !== 'All Categories' && b.category !== selectedCategory) {
       return false;
@@ -107,6 +139,15 @@ export function App() {
             </h2>
 
             <div className="header-right-actions">
+              {/* BOOKMARKS & CUSTOM PLAYLISTS BUTTON (NEW v1.9.0) */}
+              <button
+                className="collections-trigger-btn"
+                onClick={() => setIsCollectionsOpen(true)}
+                title="Manage Bookmarked Builds & Playlists"
+              >
+                <Bookmark size={14} /> Saved &amp; Playlists ({bookmarkedIds.length})
+              </button>
+
               {/* EXPORT PORTFOLIO BUTTON (NEW v1.7.0) */}
               <button
                 className="export-trigger-btn"
@@ -185,6 +226,8 @@ export function App() {
                     key={project.id}
                     project={project}
                     onSelect={setSelectedProject}
+                    isBookmarked={bookmarkedIds.includes(project.id)}
+                    onToggleBookmark={handleToggleBookmark}
                   />
                 ))}
               </AnimatePresence>
@@ -255,6 +298,8 @@ export function App() {
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
+        isBookmarked={selectedProject ? bookmarkedIds.includes(selectedProject.id) : false}
+        onToggleBookmark={handleToggleBookmark}
       />
 
       {/* SIDE-BY-SIDE BUILD COMPARISON MODAL (NEW v1.4.0) */}
@@ -268,6 +313,16 @@ export function App() {
       <PortfolioExport
         isOpen={isExportOpen}
         onClose={() => setIsExportOpen(false)}
+      />
+
+      {/* BOOKMARKS & PLAYLISTS MODAL (NEW v1.9.0) */}
+      <CollectionsModal
+        isOpen={isCollectionsOpen}
+        onClose={() => setIsCollectionsOpen(false)}
+        bookmarkedIds={bookmarkedIds}
+        onToggleBookmark={handleToggleBookmark}
+        builds={buildsList}
+        onSelectProject={setSelectedProject}
       />
     </div>
   );

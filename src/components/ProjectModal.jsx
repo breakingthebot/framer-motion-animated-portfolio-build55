@@ -1,12 +1,24 @@
 // src/components/ProjectModal.jsx
+// Interactive detail modal for showcase project builds with code inspector, sandbox embed, and bookmarking.
+// Connects to: src/App.jsx, src/components/CodeInspector.jsx, src/components/SandboxEmbed.jsx, src/components/CollectionsModal.jsx
+// Created: 2026-07-31
+
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, Sparkles, Layers, CheckCircle2 } from 'lucide-react';
+import { X, ExternalLink, Github, Sparkles, Layers, CheckCircle2, Heart } from 'lucide-react';
 import { CodeInspector } from './CodeInspector';
 import { SandboxEmbed } from './SandboxEmbed';
 import './ProjectModal.css';
 
-export const ProjectModal = ({ project, onClose }) => {
+/**
+ * Renders the detail modal for a selected build project.
+ * @param {Object} props
+ * @param {Object} props.project - The selected build object.
+ * @param {Function} props.onClose - Modal close handler.
+ * @param {boolean} [props.isBookmarked=false] - Whether project is bookmarked.
+ * @param {Function} [props.onToggleBookmark] - Handler to toggle bookmark status.
+ */
+export const ProjectModal = ({ project, onClose, isBookmarked = false, onToggleBookmark }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && project) {
@@ -41,9 +53,22 @@ export const ProjectModal = ({ project, onClose }) => {
               <span className="modal-build-num">Build #{project.buildNumber}</span>
               <h2 className="modal-title">{project.title}</h2>
             </div>
-            <button className="modal-close-btn" onClick={onClose}>
-              <X size={18} />
-            </button>
+            <div className="modal-header-actions">
+              <button
+                className={`modal-heart-btn ${isBookmarked ? 'active' : ''}`}
+                onClick={() => onToggleBookmark && onToggleBookmark(project.id)}
+                title={isBookmarked ? 'Remove Bookmark' : 'Bookmark Build'}
+              >
+                <Heart
+                  size={18}
+                  fill={isBookmarked ? '#ef4444' : 'none'}
+                  color={isBookmarked ? '#ef4444' : 'currentColor'}
+                />
+              </button>
+              <button className="modal-close-btn" onClick={onClose}>
+                <X size={18} />
+              </button>
+            </div>
           </div>
 
           <div className="modal-body">

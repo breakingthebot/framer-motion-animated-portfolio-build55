@@ -1,10 +1,22 @@
 // src/components/ProjectCard.jsx
+// Interactive build card component showcasing individual project builds.
+// Connects to: src/App.jsx, src/components/CollectionsModal.jsx
+// Created: 2026-07-31
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Sparkles, Layers } from 'lucide-react';
+import { ExternalLink, Github, Sparkles, Layers, Heart } from 'lucide-react';
 import './ProjectCard.css';
 
-export const ProjectCard = ({ project, onSelect }) => {
+/**
+ * Renders an interactive project build card with hover tilt, tech stack tags, and bookmark toggle.
+ * @param {Object} props
+ * @param {Object} props.project - Build item data.
+ * @param {Function} props.onSelect - Callback when clicking card to view details.
+ * @param {boolean} [props.isBookmarked=false] - Whether this build is bookmarked.
+ * @param {Function} [props.onToggleBookmark] - Callback when clicking the heart bookmark button.
+ */
+export const ProjectCard = ({ project, onSelect, isBookmarked = false, onToggleBookmark }) => {
   return (
     <motion.div
       className="project-card"
@@ -25,7 +37,23 @@ export const ProjectCard = ({ project, onSelect }) => {
             </span>
           )}
         </div>
-        <span className="depth-tag">{project.depth} Build</span>
+        <div className="card-top-right">
+          <button
+            className={`bookmark-heart-btn ${isBookmarked ? 'active' : ''}`}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (onToggleBookmark) onToggleBookmark(project.id);
+            }}
+            title={isBookmarked ? 'Remove Bookmark' : 'Bookmark Build'}
+          >
+            <Heart
+              size={15}
+              fill={isBookmarked ? '#ef4444' : 'none'}
+              color={isBookmarked ? '#ef4444' : 'currentColor'}
+            />
+          </button>
+          <span className="depth-tag">{project.depth} Build</span>
+        </div>
       </div>
 
       <h3 className="card-title">{project.title}</h3>
@@ -62,3 +90,4 @@ export const ProjectCard = ({ project, onSelect }) => {
     </motion.div>
   );
 };
+
