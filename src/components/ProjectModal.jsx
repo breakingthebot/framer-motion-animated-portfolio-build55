@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, Sparkles, Layers, CheckCircle2 } from 'lucide-react';
 import { CodeInspector } from './CodeInspector';
+import { SandboxEmbed } from './SandboxEmbed';
 import './ProjectModal.css';
 
 export const ProjectModal = ({ project, onClose }) => {
@@ -61,6 +62,9 @@ export const ProjectModal = ({ project, onClose }) => {
             </div>
 
             <p className="modal-description">{project.description}</p>
+
+            {/* LIVE APP INTERACTIVE SANDBOX EMBED (NEW v1.8.0) */}
+            <SandboxEmbed demoUrl={project.demoUrl} title={project.title} />
 
             <div className="modal-tech-section">
               <h4 className="section-subtitle">Tech Stack &amp; Libraries</h4>
