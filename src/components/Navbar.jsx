@@ -2,9 +2,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Code2, Layers, Github } from 'lucide-react';
+import { ThemeSwitcher } from './ThemeSwitcher';
 import './Navbar.css';
 
-export const Navbar = ({ activeSection, setActiveSection }) => {
+export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleTheme }) => {
   const navLinks = [
     { id: 'featured', label: 'Featured Builds', icon: Sparkles },
     { id: 'catalog', label: '246 Build Index', icon: Code2 },
@@ -51,15 +52,19 @@ export const Navbar = ({ activeSection, setActiveSection }) => {
           })}
         </div>
 
-        <a
-          href="https://github.com/breakingthebot"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="github-btn"
-        >
-          <Github size={16} />
-          <span>GitHub</span>
-        </a>
+        <div className="nav-right-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <ThemeSwitcher themeMode={themeMode} onToggleTheme={onToggleTheme} />
+
+          <a
+            href="https://github.com/breakingthebot"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-btn"
+          >
+            <Github size={16} />
+            <span>GitHub</span>
+          </a>
+        </div>
       </div>
     </motion.nav>
   );

@@ -1,0 +1,42 @@
+/* src/components/ThemeSwitcher.css */
+.theme-switcher-track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  padding: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  border-radius: 9999px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-switcher-track:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.theme-switcher-handle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #38bdf8;
+  color: #041220;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.theme-switcher-text {
+  position: absolute;
+  right: 8px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  pointer-events: none;
+}

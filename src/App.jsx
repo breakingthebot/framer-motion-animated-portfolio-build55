@@ -2,7 +2,7 @@
 // Main Interactive Portfolio for Build 55: 246 Builds Framer Motion Showcase.
 // Created: 2026-07-31
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
@@ -13,6 +13,7 @@ import { SearchBar } from './components/SearchBar';
 import { SkillRadar } from './components/SkillRadar';
 import { TimelineView } from './components/TimelineView';
 import { CompareModal } from './components/CompareModal';
+import { ParticleCanvas } from './components/ParticleCanvas';
 import { buildsList } from './data/buildsData';
 import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft } from 'lucide-react';
 import './App.css';
@@ -25,6 +26,15 @@ export function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
+  const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', themeMode);
+  }, [themeMode]);
+
+  const toggleTheme = () => {
+    setThemeMode((prev) => (prev === 'cyber-dark' ? 'neon-light' : 'cyber-dark'));
+  };
 
   const handleTechToggle = (tech) => {
     setSelectedTech((prev) =>
@@ -71,8 +81,16 @@ export function App() {
 
   return (
     <div className="app-layout">
+      {/* AMBIENT PARTICLE BACKGROUND CANVAS (NEW v1.5.0) */}
+      <ParticleCanvas themeMode={themeMode} />
+
       {/* GLASSMORPHIC NAVBAR */}
-      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <Navbar
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        themeMode={themeMode}
+        onToggleTheme={toggleTheme}
+      />
 
       {/* HERO BANNER */}
       <HeroSection />
