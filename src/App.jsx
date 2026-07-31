@@ -1,6 +1,6 @@
 // src/App.jsx
-// Main Interactive Portfolio for Build 55: 246 Builds Framer Motion Showcase.
-// Connects to: src/components/*, src/data/buildsData.js
+// Main Interactive Portfolio for Build 55: Enterprise Case Studies & 246 Builds Showcase.
+// Connects to: src/components/*, src/data/buildsData.js, src/data/caseStudiesData.js
 // Created: 2026-07-31
 
 import React, { useState, useEffect } from 'react';
@@ -19,19 +19,23 @@ import { ParticleCanvas } from './components/ParticleCanvas';
 import { CollectionsModal } from './components/CollectionsModal';
 import { AnalyticsModal } from './components/AnalyticsModal';
 import { CommandPalette } from './components/CommandPalette';
+import { CaseStudyCard } from './components/CaseStudyCard';
+import { CaseStudyModal } from './components/CaseStudyModal';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3, Command } from 'lucide-react';
+import { caseStudiesList } from './data/caseStudiesData';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3, Command, Cpu } from 'lucide-react';
 import './App.css';
 
 /**
- * Main App component orchestrating the 246 builds showcase portfolio.
+ * Main App component orchestrating the enterprise case studies & 246 builds showcase portfolio.
  */
 export function App() {
-  const [activeSection, setActiveSection] = useState('featured');
+  const [activeSection, setActiveSection] = useState('casestudies');
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTech, setSelectedTech] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
@@ -94,17 +98,14 @@ export function App() {
   };
 
   const filteredBuilds = buildsList.filter((b) => {
-    // 0. Only Bookmarked Filter
     if (onlyBookmarked && !bookmarkedIds.includes(b.id)) {
       return false;
     }
 
-    // 1. Category Filter
     if (selectedCategory !== 'All Categories' && b.category !== selectedCategory) {
       return false;
     }
 
-    // 2. Search Query Filter
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       const matchTitle = b.title.toLowerCase().includes(q);
@@ -118,7 +119,6 @@ export function App() {
       }
     }
 
-    // 3. Tech Stack Chips Filter
     if (selectedTech.length > 0) {
       const hasAllTech = selectedTech.every((st) =>
         b.tech.some((t) => t.toLowerCase().includes(st.toLowerCase()))
@@ -148,6 +148,26 @@ export function App() {
 
       {/* MAIN CONTAINER */}
       <main className="main-content">
+        {/* SECTION 0: ENTERPRISE CASE STUDIES (NEW v1.17.0) */}
+        <section id="casestudies" className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">
+              <Cpu className="title-icon" /> Featured Enterprise System Architecture Case Studies
+            </h2>
+            <span className="build-count-badge">Production Impact &amp; Scale Metrics</span>
+          </div>
+
+          <div className="case-studies-grid">
+            {caseStudiesList.map((cs) => (
+              <CaseStudyCard
+                key={cs.id}
+                caseStudy={cs}
+                onSelect={setSelectedCaseStudy}
+              />
+            ))}
+          </div>
+        </section>
+
         {/* SECTION 1: CATALOG & SEARCH BAR */}
         <section id="catalog" className="section-container">
           <div className="section-header">
@@ -328,6 +348,12 @@ export function App() {
           </div>
         </div>
       </footer>
+
+      {/* ENTERPRISE CASE STUDY MODAL (NEW v1.17.0) */}
+      <CaseStudyModal
+        caseStudy={selectedCaseStudy}
+        onClose={() => setSelectedCaseStudy(null)}
+      />
 
       {/* INTERACTIVE DETAIL MODAL */}
       <ProjectModal

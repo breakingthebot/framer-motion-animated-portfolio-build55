@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.17.0] - 2026-07-31
+
+### Added
+- Integrated **Enterprise System Architecture Case Studies & Flowchart Explorer (`caseStudiesData.js`, `CaseStudyCard.jsx`, `CaseStudyModal.jsx`)**.
+- Built enterprise case study cards featuring scale metrics (*150k RPS*, *12ms P99*, *99.99% SLA*, *4.2 TB/Day*).
+- Created interactive deep-dive modal with Executive Summaries, Problem & Solution blocks, System Topology Flowcharts, Code Highlights, and SLA Benchmarks.
+
 ## [1.16.0] - 2026-07-31
 
 ### Added
