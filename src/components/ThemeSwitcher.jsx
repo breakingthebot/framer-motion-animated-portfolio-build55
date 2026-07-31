@@ -5,15 +5,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
+import { playThemeSound } from '../utils/soundFX';
 import './ThemeSwitcher.css';
 
+/**
+ * Renders Framer Motion sliding theme mode toggle button with sound effect.
+ */
 export const ThemeSwitcher = ({ themeMode, onToggleTheme }) => {
   const isDark = themeMode === 'cyber-dark';
 
   return (
     <button
       className="theme-switcher-track"
-      onClick={onToggleTheme}
+      onClick={() => {
+        playThemeSound();
+        onToggleTheme();
+      }}
       aria-label="Toggle Theme Mode"
     >
       <motion.div

@@ -1,10 +1,19 @@
 // src/components/Navbar.jsx
+// Glassmorphic Navbar with navigation tabs, ThemeSwitcher, SoundToggle, and active pill animations.
+// Connects to: src/App.jsx, src/components/ThemeSwitcher.jsx, src/components/SoundToggle.jsx
+// Created: 2026-07-31
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Code2, Layers, Github } from 'lucide-react';
 import { ThemeSwitcher } from './ThemeSwitcher';
+import { SoundToggle } from './SoundToggle';
+import { playTabSound } from '../utils/soundFX';
 import './Navbar.css';
 
+/**
+ * Renders top floating navigation bar with layoutId active pill animations, theme switcher, and sound toggle.
+ */
 export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleTheme }) => {
   const navLinks = [
     { id: 'featured', label: 'Featured Builds', icon: Sparkles },
@@ -36,7 +45,10 @@ export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleThe
               <button
                 key={link.id}
                 className={`nav-link-btn ${isActive ? 'active' : ''}`}
-                onClick={() => setActiveSection(link.id)}
+                onClick={() => {
+                  playTabSound();
+                  setActiveSection(link.id);
+                }}
               >
                 <Icon size={16} />
                 <span>{link.label}</span>
@@ -53,6 +65,7 @@ export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleThe
         </div>
 
         <div className="nav-right-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <SoundToggle />
           <ThemeSwitcher themeMode={themeMode} onToggleTheme={onToggleTheme} />
 
           <a
@@ -69,3 +82,4 @@ export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleThe
     </motion.nav>
   );
 };
+

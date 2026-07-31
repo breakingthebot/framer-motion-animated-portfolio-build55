@@ -6,6 +6,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Sparkles, Layers, Heart } from 'lucide-react';
+import { playBookmarkSound, playModalOpenSound } from '../utils/soundFX';
 import './ProjectCard.css';
 
 /**
@@ -26,7 +27,10 @@ export const ProjectCard = ({ project, onSelect, isBookmarked = false, onToggleB
       exit={{ opacity: 0, scale: 0.9 }}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3, ease: 'easeOut' }}
-      onClick={() => onSelect(project)}
+      onClick={() => {
+        playModalOpenSound();
+        onSelect(project);
+      }}
     >
       <div className="card-top">
         <div className="build-badge">
@@ -42,6 +46,7 @@ export const ProjectCard = ({ project, onSelect, isBookmarked = false, onToggleB
             className={`bookmark-heart-btn ${isBookmarked ? 'active' : ''}`}
             onClick={(e) => {
               e.stopPropagation();
+              playBookmarkSound();
               if (onToggleBookmark) onToggleBookmark(project.id);
             }}
             title={isBookmarked ? 'Remove Bookmark' : 'Bookmark Build'}

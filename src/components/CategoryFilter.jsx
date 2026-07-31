@@ -1,9 +1,12 @@
-// src/components/CategoryFilter.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { categoriesList } from '../data/buildsData';
+import { playTabSound } from '../utils/soundFX';
 import './CategoryFilter.css';
 
+/**
+ * Renders category tab strip with layoutId active pill background and sound effect.
+ */
 export const CategoryFilter = ({ selectedCategory, onSelectCategory }) => {
   return (
     <div className="category-strip">
@@ -13,7 +16,10 @@ export const CategoryFilter = ({ selectedCategory, onSelectCategory }) => {
           <button
             key={cat}
             className={`cat-btn ${isSelected ? 'selected' : ''}`}
-            onClick={() => onSelectCategory(cat)}
+            onClick={() => {
+              playTabSound();
+              onSelectCategory(cat);
+            }}
           >
             <span>{cat}</span>
             {isSelected && (
