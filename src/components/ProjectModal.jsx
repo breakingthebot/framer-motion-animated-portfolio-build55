@@ -89,7 +89,7 @@ export const ProjectModal = ({ project, onClose, isBookmarked = false, onToggleB
             <p className="modal-description">{project.description}</p>
 
             {/* LIVE APP INTERACTIVE SANDBOX EMBED (NEW v1.8.0) */}
-            <SandboxEmbed demoUrl={project.demoUrl} title={project.title} />
+            {project.demoUrl && <SandboxEmbed demoUrl={project.demoUrl} title={project.title} />}
 
             <div className="modal-tech-section">
               <h4 className="section-subtitle">Tech Stack &amp; Libraries</h4>
@@ -107,14 +107,16 @@ export const ProjectModal = ({ project, onClose, isBookmarked = false, onToggleB
           </div>
 
           <div className="modal-footer">
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="modal-btn primary"
-            >
-              <ExternalLink size={16} /> Open Live Production App
-            </a>
+            {project.demoUrl && (
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="modal-btn primary"
+              >
+                <ExternalLink size={16} /> Open Live Production App
+              </a>
+            )}
 
             <a
               href={project.githubUrl}

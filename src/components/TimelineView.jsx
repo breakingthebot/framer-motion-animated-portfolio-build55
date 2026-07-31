@@ -76,14 +76,16 @@ export const TimelineView = ({ projects, onSelect }) => {
             </div>
 
             <div className="timeline-card-footer" onClick={(e) => e.stopPropagation()}>
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="timeline-link-btn primary"
-              >
-                <ExternalLink size={13} /> Live App
-              </a>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="timeline-link-btn primary"
+                >
+                  <ExternalLink size={13} /> Live App
+                </a>
+              )}
 
               <a
                 href={project.githubUrl}

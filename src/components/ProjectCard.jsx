@@ -69,14 +69,16 @@ export const ProjectCard = ({ project, onSelect, isBookmarked = false, onToggleB
       </div>
 
       <div className="card-footer" onClick={(e) => e.stopPropagation()}>
-        <a
-          href={project.demoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="card-btn primary"
-        >
-          <ExternalLink size={14} /> Live Demo
-        </a>
+        {project.demoUrl && (
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="card-btn primary"
+          >
+            <ExternalLink size={14} /> Live Demo
+          </a>
+        )}
 
         <a
           href={project.githubUrl}

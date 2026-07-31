@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.12.0] - 2026-07-31
+
+### Added
+- Integrated **Selective Vercel & GitHub Link Guarding (`ProjectCard.jsx`, `ProjectModal.jsx`, `TimelineView.jsx`)**.
+- Verified 34 builds with live Vercel deployments and 21 earlier CLI/backend builds with GitHub links only.
+- Added conditional rendering to hide Live Demo buttons and iframe sandboxes when `demoUrl` is absent, cleanly rendering GitHub links.
+
 ## [1.11.0] - 2026-07-31
 
 ### Added

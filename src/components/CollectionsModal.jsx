@@ -229,14 +229,25 @@ export function CollectionsModal({
                           >
                             View Details
                           </button>
-                          <a
-                            href={b.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="item-btn secondary"
-                          >
-                            <ExternalLink size={13} /> Live
-                          </a>
+                          {b.demoUrl ? (
+                            <a
+                              href={b.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="item-btn secondary"
+                            >
+                              <ExternalLink size={13} /> Live
+                            </a>
+                          ) : (
+                            <a
+                              href={b.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="item-btn secondary"
+                            >
+                              GitHub
+                            </a>
+                          )}
                         </div>
                       </motion.div>
                     ))}
