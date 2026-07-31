@@ -17,8 +17,9 @@ import { CompareModal } from './components/CompareModal';
 import { PortfolioExport } from './components/PortfolioExport';
 import { ParticleCanvas } from './components/ParticleCanvas';
 import { CollectionsModal } from './components/CollectionsModal';
+import { AnalyticsModal } from './components/AnalyticsModal';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, Heart } from 'lucide-react';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3 } from 'lucide-react';
 import './App.css';
 
 /**
@@ -33,6 +34,7 @@ export function App() {
   const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [isExportOpen, setIsExportOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
+  const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
   const [onlyBookmarked, setOnlyBookmarked] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
   const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
@@ -139,6 +141,15 @@ export function App() {
             </h2>
 
             <div className="header-right-actions">
+              {/* ANALYTICS & STATS MATRIX BUTTON (NEW v1.10.0) */}
+              <button
+                className="analytics-trigger-btn"
+                onClick={() => setIsAnalyticsOpen(true)}
+                title="View Technology & Ecosystem Analytics"
+              >
+                <BarChart3 size={14} /> Analytics &amp; Stats
+              </button>
+
               {/* BOOKMARKS & CUSTOM PLAYLISTS BUTTON (NEW v1.9.0) */}
               <button
                 className="collections-trigger-btn"
@@ -323,6 +334,13 @@ export function App() {
         onToggleBookmark={handleToggleBookmark}
         builds={buildsList}
         onSelectProject={setSelectedProject}
+      />
+
+      {/* BUILD ANALYTICS & TECH DISTRIBUTION MATRIX MODAL (NEW v1.10.0) */}
+      <AnalyticsModal
+        isOpen={isAnalyticsOpen}
+        onClose={() => setIsAnalyticsOpen(false)}
+        builds={buildsList}
       />
     </div>
   );
