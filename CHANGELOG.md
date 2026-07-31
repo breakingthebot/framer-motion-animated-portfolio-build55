@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [2.2.0] - 2026-07-31
+
+### Added
+- Updated contact email in `ContactBookingModal.jsx` to `breakingthebot@gmail.com` and removed LinkedIn links.
+- Enlarged live interactive sandbox viewport: increased default iframe height to `720px` and expanded mode to `880px` (`SandboxEmbed.css`).
+- Scaled modal card max-width to `1280px` and body max-height to `88vh` (`ProjectModal.css`).
+
 ## [2.1.0] - 2026-07-31
 
 ### Added

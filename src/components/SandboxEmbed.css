@@ -129,14 +129,14 @@
 .sandbox-frame-wrapper {
   position: relative;
   width: 100%;
-  height: 580px; /* Increased from 380px to 580px for spacious previewing */
+  height: 720px; /* Enlarge default iframe height for spacious previewing */
   margin: 0 auto;
   transition: all 0.3s ease;
   background: #090d16;
 }
 
 .sandbox-frame-wrapper.expanded-height {
-  height: 740px; /* Expanded mode height */
+  height: 880px; /* High-res expanded mode height */
 }
 
 .sandbox-frame-wrapper.desktop {

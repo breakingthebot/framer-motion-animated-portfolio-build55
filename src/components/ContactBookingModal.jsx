@@ -90,28 +90,14 @@ export function ContactBookingModal({ isOpen, onClose }) {
             {/* QUICK CONTACT CHIPS */}
             <div className="quick-contact-grid">
               <a
-                href="mailto:contact@breakingthebot.com"
+                href="mailto:breakingthebot@gmail.com"
                 className="quick-contact-card"
                 onClick={() => playClickSound()}
               >
                 <Mail size={18} className="qc-icon red" />
                 <div className="qc-info">
                   <span className="qc-label">Direct Email</span>
-                  <span className="qc-val">contact@breakingthebot.com</span>
-                </div>
-              </a>
-
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="quick-contact-card"
-                onClick={() => playClickSound()}
-              >
-                <Linkedin size={18} className="qc-icon blue" />
-                <div className="qc-info">
-                  <span className="qc-label">LinkedIn Profile</span>
-                  <span className="qc-val">linkedin.com/in/breakingthebot</span>
+                  <span className="qc-val">breakingthebot@gmail.com</span>
                 </div>
               </a>
 
@@ -124,8 +110,22 @@ export function ContactBookingModal({ isOpen, onClose }) {
               >
                 <Github size={18} className="qc-icon purple" />
                 <div className="qc-info">
-                  <span className="qc-label">GitHub Codebase</span>
+                  <span className="qc-label">GitHub Repositories</span>
                   <span className="qc-val">github.com/breakingthebot</span>
+                </div>
+              </a>
+
+              <a
+                href="https://framer-motion-animated-portfolio-bu.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="quick-contact-card"
+                onClick={() => playClickSound()}
+              >
+                <Briefcase size={18} className="qc-icon blue" />
+                <div className="qc-info">
+                  <span className="qc-label">Live Portfolio</span>
+                  <span className="qc-val">246 Builds Showcase</span>
                 </div>
               </a>
             </div>
