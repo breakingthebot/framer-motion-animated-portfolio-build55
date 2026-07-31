@@ -1,7 +1,12 @@
 // src/components/SearchBar.jsx
+// Live Search Input, Tech Stack Chip Multi-Filter, and Recent Search History Bar.
+// Connects to: src/App.jsx, src/components/SearchHistory.jsx
+// Created: 2026-07-31
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, X, Filter } from 'lucide-react';
+import { SearchHistory } from './SearchHistory';
 import './SearchBar.css';
 
 const allTechTags = [
@@ -17,6 +22,9 @@ const allTechTags = [
   "React Native (Expo)",
 ];
 
+/**
+ * Renders the live search bar, tech filter chips, and recent search history.
+ */
 export const SearchBar = ({
   searchQuery,
   onSearchChange,
@@ -76,6 +84,13 @@ export const SearchBar = ({
           </button>
         )}
       </div>
+
+      {/* RECENT SEARCH QUERIES PILL BAR (NEW v1.16.0) */}
+      <SearchHistory
+        activeQuery={searchQuery}
+        onSelectQuery={(query) => onSearchChange(query)}
+      />
     </motion.div>
   );
 };
+

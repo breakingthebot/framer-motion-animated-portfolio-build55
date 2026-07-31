@@ -4,7 +4,7 @@
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/breakingthebot/framer-motion-animated-portfolio-build55)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Framer Motion](https://img.shields.io/badge/Framer--Motion-Animations-0055FF?style=for-the-badge&logo=framer)](https://framer.com/motion)
-[![Release](https://img.shields.io/badge/Release-v1.15.0-indigo?style=for-the-badge)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/Release-v1.16.0-indigo?style=for-the-badge)](CHANGELOG.md)
 
 ---
 

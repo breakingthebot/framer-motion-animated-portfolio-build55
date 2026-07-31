@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.16.0] - 2026-07-31
+
+### Added
+- Integrated **Live Interactive Build Search History & Recent Searches Pill Bar (`SearchHistory.jsx`, `SearchHistory.css`)**.
+- Persists up to 8 unique recent search queries in browser `localStorage` (`build_55_recent_searches`).
+- Rendered clickable query chips, individual query remove controls (`X`), and clear history button.
+
 ## [1.15.0] - 2026-07-31
 
 ### Added
