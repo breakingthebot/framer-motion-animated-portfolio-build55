@@ -1,12 +1,15 @@
 /* src/components/SandboxEmbed.css */
+/* Styles for Spacious Live App Interactive Sandbox Embed */
+
 .sandbox-embed-container {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border-glass);
+  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.12));
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(8, 12, 20, 0.8);
-  margin-top: 8px;
+  background: rgba(8, 12, 20, 0.9);
+  margin-top: 10px;
+  transition: all 0.3s ease;
 }
 
 .sandbox-top-bar {
@@ -14,8 +17,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background: rgba(15, 23, 42, 0.7);
-  border-bottom: 1px solid var(--border-glass);
+  background: rgba(15, 23, 42, 0.85);
+  border-bottom: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -31,11 +34,21 @@
 }
 
 .sandbox-label {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--text-primary, #ffffff);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.expanded-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  border-radius: 6px;
 }
 
 .sandbox-viewport-controls {
@@ -47,19 +60,21 @@
 .device-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 28px;
+  gap: 4px;
+  padding: 4px 10px;
   height: 28px;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-glass);
+  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.12));
   border-radius: 6px;
-  color: var(--text-muted);
+  color: var(--text-muted, #94a3b8);
+  font-size: 0.75rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .device-btn:hover {
-  color: var(--text-primary);
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.12);
 }
 
@@ -67,6 +82,16 @@
   background: rgba(56, 189, 248, 0.2);
   border-color: rgba(56, 189, 248, 0.4);
   color: #38bdf8;
+}
+
+.device-text {
+  display: inline;
+}
+
+@media (max-width: 640px) {
+  .device-text {
+    display: none;
+  }
 }
 
 .sandbox-divider {
@@ -83,25 +108,35 @@
   width: 28px;
   height: 28px;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-glass);
+  border: 1px solid var(--border-glass, rgba(255, 255, 255, 0.12));
   border-radius: 6px;
-  color: var(--text-secondary);
+  color: var(--text-secondary, #cbd5e1);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .sandbox-action-btn:hover {
-  color: var(--text-primary);
+  color: #ffffff;
   background: rgba(255, 255, 255, 0.15);
+}
+
+.sandbox-action-btn.active {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
 }
 
 .sandbox-frame-wrapper {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 580px; /* Increased from 380px to 580px for spacious previewing */
   margin: 0 auto;
-  transition: width 0.3s ease;
-  background: #000000;
+  transition: all 0.3s ease;
+  background: #090d16;
+}
+
+.sandbox-frame-wrapper.expanded-height {
+  height: 740px; /* Expanded mode height */
 }
 
 .sandbox-frame-wrapper.desktop {
@@ -109,36 +144,36 @@
 }
 
 .sandbox-frame-wrapper.tablet {
-  width: 480px;
+  width: 768px;
   max-width: 100%;
-  border-left: 1px solid var(--border-glass);
-  border-right: 1px solid var(--border-glass);
+  border-left: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+  border-right: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
 }
 
 .sandbox-frame-wrapper.mobile {
-  width: 320px;
+  width: 375px;
   max-width: 100%;
-  border-left: 1px solid var(--border-glass);
-  border-right: 1px solid var(--border-glass);
+  border-left: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
+  border-right: 1px solid var(--border-glass, rgba(255, 255, 255, 0.1));
 }
 
 .sandbox-loading-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(8, 12, 20, 0.9);
+  background: rgba(8, 12, 20, 0.92);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
   z-index: 10;
-  color: var(--text-secondary);
+  color: var(--text-secondary, #94a3b8);
   font-size: 0.85rem;
 }
 
 .sandbox-spinner {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border: 3px solid rgba(56, 189, 248, 0.2);
   border-top-color: #38bdf8;
   border-radius: 50%;

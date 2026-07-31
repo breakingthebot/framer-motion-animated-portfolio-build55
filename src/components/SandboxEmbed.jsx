@@ -1,15 +1,23 @@
 // src/components/SandboxEmbed.jsx
 // Interactive Live Component Sandbox & Web App Embed Component.
+// Connects to: src/components/ProjectModal.jsx
 // Created: 2026-07-31
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, RotateCw, Monitor, Smartphone, Tablet, Maximize2, ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Play, RotateCw, Monitor, Smartphone, Tablet, Maximize2, Minimize2, ExternalLink } from 'lucide-react';
 import './SandboxEmbed.css';
 
+/**
+ * Renders a spacious live application iframe sandbox preview widget.
+ * @param {Object} props
+ * @param {string} props.demoUrl - Live Vercel app URL.
+ * @param {string} props.title - App title header.
+ */
 export const SandboxEmbed = ({ demoUrl, title }) => {
   const [isEmbedLoaded, setIsEmbedLoaded] = useState(false);
   const [deviceFrame, setDeviceFrame] = useState('desktop'); // 'desktop' | 'tablet' | 'mobile'
+  const [isExpanded, setIsExpanded] = useState(false);
   const [iframeKey, setIframeKey] = useState(0);
 
   const handleRefresh = () => {
@@ -18,38 +26,46 @@ export const SandboxEmbed = ({ demoUrl, title }) => {
   };
 
   return (
-    <div className="sandbox-embed-container">
+    <div className={`sandbox-embed-container ${isExpanded ? 'expanded-mode' : ''}`}>
       <div className="sandbox-top-bar">
         <div className="sandbox-title-group">
           <Play size={14} className="sandbox-play-icon" />
           <span className="sandbox-label">Live App Interactive Sandbox</span>
+          {isExpanded && <span className="expanded-badge">Full Screen Preview</span>}
         </div>
 
         <div className="sandbox-viewport-controls">
           <button
             className={`device-btn ${deviceFrame === 'desktop' ? 'active' : ''}`}
             onClick={() => setDeviceFrame('desktop')}
-            title="Desktop View"
+            title="Desktop View (100%)"
           >
-            <Monitor size={14} />
+            <Monitor size={14} /> <span className="device-text">Desktop</span>
           </button>
           <button
             className={`device-btn ${deviceFrame === 'tablet' ? 'active' : ''}`}
             onClick={() => setDeviceFrame('tablet')}
-            title="Tablet View"
+            title="Tablet View (768px)"
           >
-            <Tablet size={14} />
+            <Tablet size={14} /> <span className="device-text">Tablet</span>
           </button>
           <button
             className={`device-btn ${deviceFrame === 'mobile' ? 'active' : ''}`}
             onClick={() => setDeviceFrame('mobile')}
-            title="Mobile View"
+            title="Mobile View (375px)"
           >
-            <Smartphone size={14} />
+            <Smartphone size={14} /> <span className="device-text">Mobile</span>
           </button>
 
           <div className="sandbox-divider" />
 
+          <button
+            className={`sandbox-action-btn ${isExpanded ? 'active' : ''}`}
+            onClick={() => setIsExpanded(!isExpanded)}
+            title={isExpanded ? 'Minimize Viewport' : 'Expand Viewport'}
+          >
+            {isExpanded ? <Minimize2 size={13} /> : <Maximize2 size={13} />}
+          </button>
           <button className="sandbox-action-btn" onClick={handleRefresh} title="Refresh Live Sandbox">
             <RotateCw size={13} />
           </button>
@@ -58,18 +74,18 @@ export const SandboxEmbed = ({ demoUrl, title }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="sandbox-action-btn"
-            title="Open in New Window"
+            title="Open in New Tab"
           >
             <ExternalLink size={13} />
           </a>
         </div>
       </div>
 
-      <div className={`sandbox-frame-wrapper ${deviceFrame}`}>
+      <div className={`sandbox-frame-wrapper ${deviceFrame} ${isExpanded ? 'expanded-height' : ''}`}>
         {!isEmbedLoaded && (
           <div className="sandbox-loading-overlay">
             <div className="sandbox-spinner" />
-            <span>Loading Live Demo ({title})...</span>
+            <span>Loading Live App ({title})...</span>
           </div>
         )}
 

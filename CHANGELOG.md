@@ -5,6 +5,14 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.14.0] - 2026-07-31
+
+### Added
+- Integrated **Expanded High-Resolution Live App Sandbox Viewport (`SandboxEmbed.jsx`, `SandboxEmbed.css`, `ProjectModal.css`)**.
+- Expanded `ProjectModal` max-width from `640px` to `1080px` (`82vh` body scroll height).
+- Increased default `SandboxEmbed` iframe height from `380px` to `580px`.
+- Added interactive Full-Screen Expand toggle button (`Maximize2` / `Minimize2`) scaling iframe height up to `740px`.
+
 ## [1.13.0] - 2026-07-31
 
 ### Added
