@@ -21,6 +21,7 @@ import { AnalyticsModal } from './components/AnalyticsModal';
 import { CommandPalette } from './components/CommandPalette';
 import { CaseStudyCard } from './components/CaseStudyCard';
 import { CaseStudyModal } from './components/CaseStudyModal';
+import { ContactBookingModal } from './components/ContactBookingModal';
 import { buildsList } from './data/buildsData';
 import { caseStudiesList } from './data/caseStudiesData';
 import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3, Command, Cpu } from 'lucide-react';
@@ -41,6 +42,7 @@ export function App() {
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
   const [isCmdPaletteOpen, setIsCmdPaletteOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const [onlyBookmarked, setOnlyBookmarked] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
   const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
@@ -141,6 +143,7 @@ export function App() {
         themeMode={themeMode}
         onToggleTheme={toggleTheme}
         onOpenCmdPalette={() => setIsCmdPaletteOpen(true)}
+        onOpenContact={() => setIsContactOpen(true)}
       />
 
       {/* HERO BANNER */}
@@ -402,11 +405,13 @@ export function App() {
         onClose={() => setIsCmdPaletteOpen(false)}
         builds={buildsList}
         onSelectProject={setSelectedProject}
-        onToggleTheme={toggleTheme}
-        onOpenAnalytics={() => setIsAnalyticsOpen(true)}
-        onOpenPlaylists={() => setIsCollectionsOpen(true)}
-        onOpenExport={() => setIsExportOpen(true)}
         themeMode={themeMode}
+      />
+
+      {/* RECRUITER CONTACT & INTERVIEW SCHEDULING MODAL (NEW v2.1.0) */}
+      <ContactBookingModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
     </div>
   );

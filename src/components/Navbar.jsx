@@ -1,20 +1,20 @@
 // src/components/Navbar.jsx
-// Glassmorphic Navbar with navigation tabs, ThemeSwitcher, SoundToggle, and active pill animations.
-// Connects to: src/App.jsx, src/components/ThemeSwitcher.jsx, src/components/SoundToggle.jsx
+// Glassmorphic Navbar with navigation tabs, ThemeSwitcher, SoundToggle, and contact modal trigger.
+// Connects to: src/App.jsx, src/components/ThemeSwitcher.jsx, src/components/SoundToggle.jsx, src/components/ContactBookingModal.jsx
 // Created: 2026-07-31
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Sparkles, Code2, Layers, Github } from 'lucide-react';
+import { Cpu, Sparkles, Code2, Layers, Github, Mail } from 'lucide-react';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { SoundToggle } from './SoundToggle';
-import { playTabSound } from '../utils/soundFX';
+import { playClickSound, playTabSound } from '../utils/soundFX';
 import './Navbar.css';
 
 /**
- * Renders top floating navigation bar with layoutId active pill animations, theme switcher, and sound toggle.
+ * Renders top floating navigation bar with layoutId active pill animations, theme switcher, sound toggle, and contact modal trigger.
  */
-export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleTheme }) => {
+export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleTheme, onOpenContact }) => {
   const navLinks = [
     { id: 'casestudies', label: 'Enterprise Case Studies', icon: Cpu },
     { id: 'featured', label: 'Featured Repos', icon: Sparkles },
@@ -65,7 +65,32 @@ export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleThe
           })}
         </div>
 
-        <div className="nav-right-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div className="nav-right-group" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <button
+            className="contact-trigger-btn"
+            onClick={() => {
+              playClickSound();
+              if (onOpenContact) onOpenContact();
+            }}
+            title="Recruiter & Leadership Direct Contact / Interview Scheduling"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '0.35rem 0.85rem',
+              borderRadius: '9999px',
+              fontSize: '0.78rem',
+              fontWeight: 800,
+              background: '#38bdf8',
+              color: '#041220',
+              border: 'none',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
+            }}
+          >
+            <Mail size={14} /> Hire / Contact
+          </button>
+
           <SoundToggle />
           <ThemeSwitcher themeMode={themeMode} onToggleTheme={onToggleTheme} />
 
@@ -83,4 +108,3 @@ export const Navbar = ({ activeSection, setActiveSection, themeMode, onToggleThe
     </motion.nav>
   );
 };
-

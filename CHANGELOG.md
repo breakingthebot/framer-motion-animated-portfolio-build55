@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [2.1.0] - 2026-07-31
+
+### Added
+- Integrated **Recruiter Direct Contact & Interview Scheduling Modal (`ContactBookingModal.jsx`, `ContactBookingModal.css`)**.
+- Built recruiter contact modal featuring direct email, LinkedIn, and GitHub contact cards, inquiry category selectors (*Full-Time Role*, *Technical Advisory*, *Contract/Consulting*), form validation, and toast submission confirmation.
+- Added "Hire / Contact" trigger button to top floating navigation bar (`Navbar.jsx`).
+
 ## [2.0.0] - 2026-07-31
 
 ### Added
