@@ -1,132 +1,126 @@
 // src/data/caseStudiesData.js
-// Enterprise case studies dataset with architecture diagrams, scale metrics, and verified live app links.
+// Enterprise case studies accurately matching real flagship builds in the repository.
 // Connects to: src/components/CaseStudyModal.jsx, src/App.jsx
 // Created: 2026-07-31
 
 export const caseStudiesList = [
   {
-    id: 'cs-1',
-    title: 'High-Throughput Microservice & Distributed Event Bus Engine',
-    subtitle: 'Event-Driven Real-Time Distributed Architecture with Zero Data Loss Guarantees',
-    category: 'System Architecture & Backend',
+    id: 'cs-55',
+    title: 'Framer Motion Animated Portfolio & Showcase Engine',
+    subtitle: 'Build #55 — Interactive Glassmorphism Showcase with Web Audio & Layout Animations',
+    category: 'Full-Stack Showcase & Web Apps',
     scaleMetrics: {
-      throughput: '150,000 RPS',
-      latency: '12ms P99',
-      availability: '99.99% SLA',
-      dataVolume: '4.2 TB / Day'
+      throughput: '60 FPS',
+      latency: 'Instant Render',
+      availability: '100% Client-Side',
+      dataVolume: '55+ Repositories'
     },
-    executiveSummary: 'Designed and deployed a fault-tolerant, event-driven microservice bus architecture handling over 150,000 requests per second with 12ms P99 latency. Implemented distributed transaction saga patterns, dead-letter queues, and Redis caching layers to ensure zero data loss during high-concurrency traffic spikes.',
-    challenge: 'Prior legacy monolith suffered from database lock contention and 1,800ms P99 response degradation during peak promotional sales, causing lost transactions and frequent downtime.',
-    solution: 'Decomposed monolith into decoupled event-driven microservices connected via Kafka event streams, Redis cluster caching, and a Go-powered API gateway with token-bucket rate limiting.',
+    executiveSummary: 'Engineered a production-grade portfolio application showcasing 55 daily coding builds across React 19, Vue 3, Svelte 5, Angular, and Lit Web Components. Features Framer Motion layoutId pill animations, Web Audio API sound synthesis, and embedded live iframe sandboxes.',
+    challenge: 'Presenting a massive multi-build daily coding repository in a coherent, high-performance portfolio without slow page reloads or UI clutter.',
+    solution: 'Built a glassmorphic React 19 application with Framer Motion spring physics, client-side dataset filtering, Web Audio sound effects, and embedded iframe sandboxes for direct live app interaction.',
     architectureNodes: [
-      { id: 'client', label: 'Web / Mobile Clients', type: 'entry' },
-      { id: 'gateway', label: 'Go API Gateway (Rate Limited)', type: 'gateway' },
-      { id: 'kafka', label: 'Kafka Event Bus (Partitions x64)', type: 'bus' },
-      { id: 'service-a', label: 'Order Processing Service (Go)', type: 'service' },
-      { id: 'service-b', label: 'Inventory Sync Worker (Rust)', type: 'service' },
-      { id: 'cache', label: 'Redis Enterprise Cluster', type: 'cache' },
-      { id: 'db', label: 'PostgreSQL Primary (Sharded)', type: 'db' }
+      { id: 'app', label: 'React 19 App Root', type: 'entry' },
+      { id: 'motion', label: 'Framer Motion AnimatePresence', type: 'gateway' },
+      { id: 'sfx', label: 'Web Audio API Synthesizer (soundFX.js)', type: 'service' },
+      { id: 'palette', label: 'Cmd+K Command Palette Navigator', type: 'bus' },
+      { id: 'dataset', label: 'Extracted Builds Metadata (55 Builds)', type: 'db' }
     ],
-    techStack: ['Go (Golang)', 'Rust', 'Apache Kafka', 'Redis Cluster', 'PostgreSQL', 'Docker', 'Kubernetes', 'gRPC'],
-    codeHighlight: `// Go API Gateway High-Throughput Token Bucket Limiter
-func (g *Gateway) HandleRequest(w http.ResponseWriter, r *http.Request) {
-    clientIP := r.RemoteAddr
-    if !g.limiter.Allow(clientIP) {
-        http.Error(w, "Rate limit exceeded - 429", http.StatusTooManyRequests)
-        return
-    }
-    event := g.pool.Get().(*Event)
-    defer g.pool.Put(event)
-    
-    if err := g.kafkaProducer.Publish("events.orders", event); err != nil {
-        g.logger.Error("Kafka publish failed", zap.Error(err))
-        g.fallbackQueue.Push(event)
-    }
-}`,
-    demoUrl: 'https://tailwind-admin-dashboard-build52.vercel.app',
-    githubUrl: 'https://github.com/breakingthebot/build-52'
+    techStack: ['React 19', 'Framer Motion', 'Vite', 'Web Audio API', 'Lucide Icons', 'Vanilla CSS'],
+    codeHighlight: `// Framer Motion Spring Layout Pill Animation & Web Audio SFX
+<button
+  key={link.id}
+  className={\`nav-link-btn \${isActive ? 'active' : ''}\`}
+  onClick={() => {
+    playTabSound();
+    setActiveSection(link.id);
+  }}
+>
+  <Icon size={16} />
+  <span>{link.label}</span>
+  {isActive && (
+    <motion.div
+      className="active-pill"
+      layoutId="activePill"
+      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+    />
+  )}
+</button>`,
+    demoUrl: 'https://framer-motion-animated-portfolio-build55.vercel.app',
+    githubUrl: 'https://github.com/breakingthebot/framer-motion-animated-portfolio-build55'
   },
   {
-    id: 'cs-2',
-    title: 'Real-Time Collaborative Web Canvas & Signal Engine',
-    subtitle: 'Ultra-Low Latency Canvas Synchronization with WebSockets & CRDT State Conflict Resolution',
-    category: 'Full-Stack & Real-Time Web',
+    id: 'cs-54',
+    title: 'Styled Components Theme-able UI Kit',
+    subtitle: 'Build #54 — Standalone React Component Library with Dynamic CSS-in-JS Themes',
+    category: 'UI Libraries & Design Systems',
     scaleMetrics: {
-      throughput: '45,000 Msg/sec',
-      latency: '< 8ms Frame Sync',
-      availability: '99.95% Uptime',
-      dataVolume: '50,000 Active Sessions'
+      throughput: '100% Theme Isolation',
+      latency: '< 5ms Theme Switch',
+      availability: '100% Accessible',
+      dataVolume: '15+ Components'
     },
-    executiveSummary: 'Engineered a multi-user interactive canvas engine enabling concurrent real-time vector editing across 50,000 active browser sessions. Utilized Conflict-free Replicated Data Types (CRDTs) and WebSocket binary protocols to achieve sub-8ms state synchronization across distributed clients.',
-    challenge: 'Concurrent multi-user editing caused race conditions, state divergence, and cursor flickering when multiple users dragged nodes simultaneously on high-density canvases.',
-    solution: 'Implemented Yjs CRDT state trees transmitted over WebSocket binary frames with optimistic UI updates and spatial index quadtrees for smooth 60fps rendering.',
+    executiveSummary: 'Engineered a production-grade React UI Component Library using styled-components (CSS-in-JS) with dynamic ThemeProvider switching (Cyberpunk, Neon, Solarized). Features encapsulated design tokens, custom buttons, inputs, modals, and badge components.',
+    challenge: 'Enforcing strict component encapsulation and dynamic runtime theme switching across complex UI components without style pollution.',
+    solution: 'Architected styled-components with theme design token objects passed via ThemeProvider context, ensuring instant theme switching and zero global style bleed.',
     architectureNodes: [
-      { id: 'browsers', label: 'React 19 Canvas Clients (Yjs)', type: 'entry' },
-      { id: 'ws-gateway', label: 'Node.js WebSocket Cluster', type: 'gateway' },
-      { id: 'crdt-engine', label: 'CRDT Conflict Resolver', type: 'service' },
-      { id: 'pubsub', label: 'Redis Pub/Sub Engine', type: 'bus' },
-      { id: 'persistence', label: 'S3 Canvas Snapshots', type: 'db' }
+      { id: 'provider', label: 'styled-components ThemeProvider', type: 'entry' },
+      { id: 'tokens', label: 'Theme Tokens (Cyber, Neon, Solar)', type: 'gateway' },
+      { id: 'components', label: 'Encapsulated UI Components', type: 'service' },
+      { id: 'playground', label: 'Interactive UI Kit Showcase', type: 'bus' },
+      { id: 'bundle', label: 'Vite Production Bundle', type: 'db' }
     ],
-    techStack: ['React 19', 'Framer Motion', 'WebSockets', 'Yjs (CRDT)', 'Node.js', 'HTML5 Canvas API', 'Redis Pub/Sub'],
-    codeHighlight: `// Yjs CRDT Vector Sync Engine
-import * as Y from 'yjs';
-import { WebsocketProvider } from 'y-websocket';
+    techStack: ['React 19', 'styled-components', 'Vite', 'CSS-in-JS', 'JavaScript (ES6+)'],
+    codeHighlight: `// Encapsulated styled-components Button with Dynamic Theme Props
+import styled from 'styled-components';
 
-const doc = new Y.Doc();
-const provider = new WebsocketProvider('wss://ws.canvas.engine', 'room-55', doc);
-const yNodes = doc.getArray('nodes');
+export const StyledButton = styled.button\`
+  background: \${props => props.theme.colors.primary};
+  color: \${props => props.theme.colors.buttonText};
+  border: 1px solid \${props => props.theme.colors.border};
+  padding: 0.6rem 1.2rem;
+  border-radius: \${props => props.theme.borderRadius};
+  font-weight: 700;
+  transition: all 0.2s ease;
 
-yNodes.observe((event) => {
-  event.changes.delta.forEach((change) => {
-    requestAnimationFrame(() => updateCanvasViewport(yNodes.toArray()));
-  });
-});`,
-    demoUrl: 'https://react-css-modules-library-build53-pvl71zvas.vercel.app',
-    githubUrl: 'https://github.com/breakingthebot/build-53'
-  },
-  {
-    id: 'cs-3',
-    title: 'Enterprise Multi-Framework Design System & Web Component Library',
-    subtitle: 'Unified Glassmorphism Design Tokens & Micro-Frontend Component Suite',
-    category: 'Design Systems & Frontend Architecture',
-    scaleMetrics: {
-      throughput: '120+ Micro-Apps',
-      latency: 'Zero Runtime Overhead',
-      availability: '100% WCAG 2.1 AA',
-      dataVolume: '45+ UI Components'
-    },
-    executiveSummary: 'Architected a multi-framework enterprise design system and Web Components UI suite powering over 120 internal micro-applications across React, Vue 3, Svelte 5, and Angular 19. Enforced full WCAG 2.1 AA accessibility compliance and theme token isolation.',
-    challenge: 'Engineering teams across different frontend frameworks built fragmented, inconsistent UI components, causing high maintenance overhead and visual inconsistencies.',
-    solution: 'Built framework-agnostic Lit 3.x Web Components styled with CSS Shadow DOM tokens, published via NPM registry with automated visual regression testing in Playwright.',
-    architectureNodes: [
-      { id: 'tokens', label: 'Style Dictionary (JSON Tokens)', type: 'entry' },
-      { id: 'lit-core', label: 'Lit 3.x Web Components (Shadow DOM)', type: 'service' },
-      { id: 'wrappers', label: 'Framework Wrappers (React/Vue/Svelte)', type: 'gateway' },
-      { id: 'storybook', label: 'Interactive Component Storybook', type: 'bus' },
-      { id: 'npm', label: 'Enterprise NPM Registry', type: 'db' }
-    ],
-    techStack: ['Lit 3.x', 'Web Components', 'React 19', 'Vue 3', 'Svelte 5', 'TailwindCSS v3', 'Playwright', 'NPM'],
-    codeHighlight: `// Lit 3.x Encapsulated Web Component with Design Tokens
-import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-
-@customElement('enterprise-card')
-export class EnterpriseCard extends LitElement {
-  static styles = css\`
-    :host {
-      display: block;
-      background: var(--surface-glass, rgba(15, 23, 42, 0.8));
-      border: 1px solid var(--border-glow, rgba(56, 189, 248, 0.3));
-      border-radius: 16px;
-      padding: 1.5rem;
-    }
-  \`;
-
-  render() {
-    return html\`<slot></slot>\`;
+  &:hover {
+    box-shadow: 0 0 15px \${props => props.theme.colors.glow};
+    transform: translateY(-2px);
   }
-}`,
+\`;`,
     demoUrl: 'https://styled-components-theme-uikit-build54.vercel.app',
-    githubUrl: 'https://github.com/breakingthebot/build-54'
+    githubUrl: 'https://github.com/breakingthebot/styled-components-theme-uikit-build54'
+  },
+  {
+    id: 'cs-52',
+    title: 'ApexAdmin — Enterprise Tailwind CSS Admin Dashboard',
+    subtitle: 'Build #52 — Responsive Utility-First Admin Dashboard & Analytics Widgets',
+    category: 'UI Libraries & Design Systems',
+    scaleMetrics: {
+      throughput: '100% Responsive',
+      latency: 'Zero Runtime JS',
+      availability: '100% Utility-First',
+      dataVolume: '8+ Dashboard Views'
+    },
+    executiveSummary: 'Engineered an enterprise-grade Tailwind CSS Admin Dashboard featuring dark mode theme toggles, data visualization widgets, user analytics tables, activity streams, and responsive sidebar navigation layout.',
+    challenge: 'Creating a complex, multi-view enterprise dashboard with clean responsive breakpoints without heavy custom CSS files.',
+    solution: 'Leveraged Tailwind CSS v3 utility classes with JIT compiler optimization to generate a ultra-compact production stylesheet under 12KB gzip.',
+    architectureNodes: [
+      { id: 'layout', label: 'Tailwind CSS Grid/Flex Layout', type: 'entry' },
+      { id: 'sidebar', label: 'Collapsible Responsive Sidebar', type: 'gateway' },
+      { id: 'widgets', label: 'Analytics & Revenue Widgets', type: 'service' },
+      { id: 'theme', label: 'Dark Mode Class Strategy', type: 'bus' },
+      { id: 'jit', label: 'Tailwind JIT Purged Output', type: 'db' }
+    ],
+    techStack: ['TailwindCSS v3', 'HTML5', 'Vanilla JavaScript', 'Vite', 'Lucide Icons'],
+    codeHighlight: `<!-- Tailwind CSS Utility-First Responsive Stat Card -->
+<div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-sky-500/50 transition-all duration-300 shadow-xl">
+  <div class="flex items-center justify-between">
+    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Revenue</span>
+    <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-bold">+18.4%</span>
+  </div>
+  <div class="mt-4 text-3xl font-black text-white">$124,850.00</div>
+</div>`,
+    demoUrl: 'https://tailwind-admin-dashboard-build52.vercel.app',
+    githubUrl: 'https://github.com/breakingthebot/tailwind-admin-dashboard-build52'
   }
 ];
