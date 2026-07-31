@@ -3,14 +3,19 @@
 All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Builds Showcase)** will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.5.0.html).
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.6.0.html).
+
+## [1.6.0] - 2026-07-31
+
+### Added
+- Integrated **Interactive Code Snippet & Architecture Inspector (`CodeInspector.jsx`)**.
+- Added collapsible code drawer inside `ProjectModal.jsx` showcasing component imports, design tokens, and architectural patterns.
+- Added copy-to-clipboard button with visual checkmark feedback.
 
 ## [1.5.0] - 2026-07-31
 
 ### Added
 - **MILESTONE RELEASE v1.5.0**: Integrated **Custom Theme Mode Switcher & Particle Background Canvas (`ThemeSwitcher.jsx`, `ParticleCanvas.jsx`)**.
-- Added Framer Motion sliding theme mode toggle button supporting **Cyberpunk Dark Glassmorphism** and **Neon Light** modes.
-- Added ambient HTML5 canvas particle background with theme-adaptive floating nodes and window resize handlers.
 
 ## [1.4.0] - 2026-07-31
 

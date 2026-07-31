@@ -1,0 +1,101 @@
+/* src/components/CodeInspector.css */
+.code-inspector-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(8, 12, 20, 0.6);
+  margin-top: 8px;
+}
+
+.code-inspector-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(15, 23, 42, 0.6);
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.code-inspector-toggle-btn:hover {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.toggle-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.code-icon {
+  color: #38bdf8;
+}
+
+.file-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.code-snippet-box {
+  overflow: hidden;
+  border-top: 1px solid var(--border-glass);
+  background: rgba(4, 8, 16, 0.9);
+}
+
+.snippet-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: rgba(15, 23, 42, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.snippet-filename {
+  font-size: 0.78rem;
+  font-family: monospace;
+  color: var(--text-muted);
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.code-pre {
+  padding: 16px;
+  margin: 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #38bdf8;
+  overflow-x: auto;
+}

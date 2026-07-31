@@ -4,7 +4,7 @@
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/breakingthebot/framer-motion-animated-portfolio-build55)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Framer Motion](https://img.shields.io/badge/Framer--Motion-Animations-0055FF?style=for-the-badge&logo=framer)](https://framer.com/motion)
-[![Release](https://img.shields.io/badge/Release-v1.5.0-indigo?style=for-the-badge)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/Release-v1.6.0-indigo?style=for-the-badge)](CHANGELOG.md)
 
 ---
 
@@ -12,7 +12,7 @@
 
 **Framer Motion Animated Portfolio (Build 55)** is an interactive, theme-switchable glassmorphism portfolio application engineered with **React 19**, **Framer Motion**, and **Vite** celebrating the entire **246 Daily Coding Builds** ecosystem.
 
-Designed to showcase the broad portfolio of daily coding builds—ranging from React, Vue 3, Svelte 5, Angular, and Lit 3.x Web Components to HTMX, Alpine.js, styled-components, Python, Go, and Rust—this application delivers dynamic Framer Motion page transitions, theme mode switching (Cyberpunk Dark & Neon Light), ambient particle canvas backgrounds, side-by-side repository comparison matrices, real-time live search & tech stack multi-filtering, animated skill radar charts & progress gauges, chronological timeline feed views, scroll animations, layout reordering, hover scale/tilt card physics, and interactive modal overlays.
+Designed to showcase the broad portfolio of daily coding builds—ranging from React, Vue 3, Svelte 5, Angular, and Lit 3.x Web Components to HTMX, Alpine.js, styled-components, Python, Go, and Rust—this application delivers dynamic Framer Motion page transitions, code snippet architecture inspectors, theme mode switching (Cyberpunk Dark & Neon Light), ambient particle canvas backgrounds, side-by-side repository comparison matrices, real-time live search & tech stack multi-filtering, animated skill radar charts & progress gauges, chronological timeline feed views, scroll animations, layout reordering, hover scale/tilt card physics, and interactive modal overlays.
 
 ### 🌐 Live Production & Repository Links
 - **Live Vercel Application**: [https://framer-motion-animated-portfolio-build55.vercel.app](https://framer-motion-animated-portfolio-build55.vercel.app)
@@ -42,6 +42,8 @@ Build_55/
 │   │   ├── TimelineView.css
 │   │   ├── CompareModal.jsx       # Side-by-side build comparison matrix modal
 │   │   ├── CompareModal.css
+│   │   ├── CodeInspector.jsx      # Collapsible architectural code snippet viewer
+│   │   ├── CodeInspector.css
 │   │   ├── ProjectCard.jsx        # Hover scale/tilt project card
 │   │   ├── ProjectCard.css
 │   │   ├── ProjectModal.jsx       # AnimatePresence backdrop modal dialog
@@ -70,18 +72,18 @@ Build_55/
 
 ## 🧩 Key Features
 
-1. **🌙 Theme Switcher & Particle Canvas (`ThemeSwitcher.jsx`, `ParticleCanvas.jsx`)**:
-   - Framer Motion sliding theme toggle switching between **Cyberpunk Dark** and **Neon Light** modes. Floating HTML5 canvas ambient particle background with theme-adaptive node colors.
-2. **🎛️ Side-by-Side Build Comparison Matrix (`CompareModal.jsx`)**:
+1. **💻 Code Snippet Architecture Inspector (`CodeInspector.jsx`)**:
+   - Collapsible code snippet inspector inside `ProjectModal.jsx` showcasing component imports, design tokens, and architectural pattern highlights with one-click copy feedback.
+2. **🌙 Theme Switcher & Particle Canvas (`ThemeSwitcher.jsx`, `ParticleCanvas.jsx`)**:
+   - Framer Motion sliding theme toggle switching between **Cyberpunk Dark** and **Neon Light** modes. Floating HTML5 canvas ambient particle background.
+3. **🎛️ Side-by-Side Build Comparison Matrix (`CompareModal.jsx`)**:
    - Interactive modal allowing users to select any 2 builds from the 246 series dropdown selectors and compare build numbers, title headers, categories, architecture depth, tech stacks, GitHub repos, and live deployments.
-3. **📇 Framer Motion Animated Timeline View (`TimelineView.jsx`)**:
+4. **📇 Framer Motion Animated Timeline View (`TimelineView.jsx`)**:
    - Vertical timeline milestone feed with glowing node dots, build numbers, depth tags, title headers, technology chips, and live links.
-4. **📊 Skill Radar & Progress Gauges (`SkillRadar.jsx`)**:
+5. **📊 Skill Radar & Progress Gauges (`SkillRadar.jsx`)**:
    - 6-axis SVG radar polygon visualizing technical coverage across UI Libraries, Web Apps, Micro-frontends, Minimal JS/HTMX, CLI Tools, and Systems Languages.
-5. **🔍 Live Search & Tech Multi-Filter Bar (`SearchBar.jsx`)**:
+6. **🔍 Live Search & Tech Multi-Filter Bar (`SearchBar.jsx`)**:
    - Real-time text query search across build numbers, project titles, descriptions, categories, and tech stack tags with multi-select technology chips.
-6. **🚀 Framer Motion Glassmorphic Navbar (`Navbar.jsx`)**:
-   - Floating navigation bar with `layoutId` active pill animations, theme switcher, section switching, and GitHub repo links.
 
 ---
 

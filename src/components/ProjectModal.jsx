@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Github, Sparkles, Layers, CheckCircle2 } from 'lucide-react';
+import { CodeInspector } from './CodeInspector';
 import './ProjectModal.css';
 
 export const ProjectModal = ({ project, onClose }) => {
@@ -71,6 +72,9 @@ export const ProjectModal = ({ project, onClose }) => {
                 ))}
               </div>
             </div>
+
+            {/* ARCHITECTURE & CODE INSPECTOR (NEW v1.6.0) */}
+            <CodeInspector buildNumber={project.buildNumber} />
           </div>
 
           <div className="modal-footer">
