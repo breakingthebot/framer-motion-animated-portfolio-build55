@@ -12,8 +12,9 @@ import { CategoryFilter } from './components/CategoryFilter';
 import { SearchBar } from './components/SearchBar';
 import { SkillRadar } from './components/SkillRadar';
 import { TimelineView } from './components/TimelineView';
+import { CompareModal } from './components/CompareModal';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit } from 'lucide-react';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft } from 'lucide-react';
 import './App.css';
 
 export function App() {
@@ -22,6 +23,7 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTech, setSelectedTech] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isCompareOpen, setIsCompareOpen] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
 
   const handleTechToggle = (tech) => {
@@ -85,6 +87,14 @@ export function App() {
             </h2>
 
             <div className="header-right-actions">
+              {/* COMPARE BUILDS BUTTON (NEW v1.4.0) */}
+              <button
+                className="compare-trigger-btn"
+                onClick={() => setIsCompareOpen(true)}
+              >
+                <ArrowRightLeft size={14} /> Compare Builds
+              </button>
+
               <span className="build-count-badge">
                 Showing {filteredBuilds.length} Featured Repos
               </span>
@@ -217,6 +227,13 @@ export function App() {
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
+      />
+
+      {/* SIDE-BY-SIDE BUILD COMPARISON MODAL (NEW v1.4.0) */}
+      <CompareModal
+        isOpen={isCompareOpen}
+        onClose={() => setIsCompareOpen(false)}
+        builds={buildsList}
       />
     </div>
   );
