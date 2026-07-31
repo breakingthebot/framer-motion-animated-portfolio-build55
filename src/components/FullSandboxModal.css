@@ -1,0 +1,234 @@
+/* src/components/FullSandboxModal.css */
+/* Styles for Full-Screen High-Resolution Interactive Sandbox Modal */
+
+.full-sandbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  background: rgba(4, 8, 16, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.full-sandbox-card {
+  width: 98vw;
+  height: 96vh;
+  background: #090d16;
+  border: 1px solid var(--border-glow, rgba(56, 189, 248, 0.4));
+  border-radius: 20px;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-sandbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid var(--border-glass, rgba(255, 255, 255, 0.12));
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.fs-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fs-build-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
+  border-radius: 8px;
+}
+
+.fs-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fs-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fs-device-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fs-dev-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted, #94a3b8);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fs-dev-btn:hover {
+  color: #ffffff;
+}
+
+.fs-dev-btn.active {
+  background: #38bdf8;
+  color: #041220;
+}
+
+.fs-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fs-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.fs-external-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  color: #34d399;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.fs-external-btn:hover {
+  background: rgba(52, 211, 153, 0.25);
+  color: #6ee7b7;
+}
+
+.fs-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fs-close-btn:hover {
+  background: rgba(239, 68, 68, 0.3);
+  color: #ffffff;
+}
+
+/* VIEWPORT BODY */
+.full-sandbox-viewport-wrap {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #090d16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fs-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 13, 22, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  z-index: 10;
+  color: var(--text-secondary, #cbd5e1);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.fs-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(56, 189, 248, 0.2);
+  border-top-color: #38bdf8;
+  border-radius: 50%;
+  animation: fs-spin 0.8s linear infinite;
+}
+
+@keyframes fs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fs-iframe-container {
+  height: 100%;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.fs-iframe-container.desktop {
+  width: 100%;
+}
+
+.fs-iframe-container.tablet {
+  width: 768px;
+  max-width: 100%;
+  border-left: 2px solid rgba(56, 189, 248, 0.3);
+  border-right: 2px solid rgba(56, 189, 248, 0.3);
+}
+
+.fs-iframe-container.mobile {
+  width: 375px;
+  max-width: 100%;
+  border-left: 2px solid rgba(56, 189, 248, 0.3);
+  border-right: 2px solid rgba(56, 189, 248, 0.3);
+}
+
+.fs-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

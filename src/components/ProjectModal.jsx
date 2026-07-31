@@ -89,7 +89,13 @@ export const ProjectModal = ({ project, onClose, isBookmarked = false, onToggleB
             <p className="modal-description">{project.description}</p>
 
             {/* LIVE APP INTERACTIVE SANDBOX EMBED (NEW v1.8.0) */}
-            {project.demoUrl && <SandboxEmbed demoUrl={project.demoUrl} title={project.title} />}
+            {project.demoUrl && (
+              <SandboxEmbed 
+                demoUrl={project.demoUrl} 
+                title={project.title} 
+                onOpenFullscreen={() => onOpenFullscreen && onOpenFullscreen(project)}
+              />
+            )}
 
             <div className="modal-tech-section">
               <h4 className="section-subtitle">Tech Stack &amp; Libraries</h4>

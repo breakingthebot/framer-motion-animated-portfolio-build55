@@ -22,6 +22,7 @@ import { CommandPalette } from './components/CommandPalette';
 import { CaseStudyCard } from './components/CaseStudyCard';
 import { CaseStudyModal } from './components/CaseStudyModal';
 import { ContactBookingModal } from './components/ContactBookingModal';
+import { FullSandboxModal } from './components/FullSandboxModal';
 import { buildsList } from './data/buildsData';
 import { caseStudiesList } from './data/caseStudiesData';
 import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3, Command, Cpu } from 'lucide-react';
@@ -43,6 +44,7 @@ export function App() {
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
   const [isCmdPaletteOpen, setIsCmdPaletteOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
+  const [fullscreenProject, setFullscreenProject] = useState(null);
   const [onlyBookmarked, setOnlyBookmarked] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
   const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
@@ -367,6 +369,7 @@ export function App() {
         onClose={() => setSelectedProject(null)}
         isBookmarked={selectedProject ? bookmarkedIds.includes(selectedProject.id) : false}
         onToggleBookmark={handleToggleBookmark}
+        onOpenFullscreen={setFullscreenProject}
       />
 
       {/* SIDE-BY-SIDE BUILD COMPARISON MODAL (NEW v1.4.0) */}
@@ -412,6 +415,12 @@ export function App() {
       <ContactBookingModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
+      />
+
+      {/* FULLSCREEN HIGH-RES INTERACTIVE SANDBOX MODAL (NEW v2.3.0) */}
+      <FullSandboxModal
+        project={fullscreenProject}
+        onClose={() => setFullscreenProject(null)}
       />
     </div>
   );

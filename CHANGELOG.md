@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [2.3.0] - 2026-07-31
+
+### Added
+- Integrated **100% Full-Screen High-Resolution Interactive Sandbox Modal (`FullSandboxModal.jsx`, `FullSandboxModal.css`)**.
+- Built 98vw x 96vh edge-to-edge full-screen sandbox overlay with Desktop, Tablet, and Mobile device preview toggles.
+- Added blue "100% Fullscreen Sandbox" trigger button to all sandbox embed headers (`SandboxEmbed.jsx`, `ProjectModal.jsx`).
+
 ## [2.2.0] - 2026-07-31
 
 ### Added

@@ -1,11 +1,12 @@
 // src/components/SandboxEmbed.jsx
 // Interactive Live Component Sandbox & Web App Embed Component.
-// Connects to: src/components/ProjectModal.jsx
+// Connects to: src/components/ProjectModal.jsx, src/components/FullSandboxModal.jsx
 // Created: 2026-07-31
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, RotateCw, Monitor, Smartphone, Tablet, Maximize2, Minimize2, ExternalLink } from 'lucide-react';
+import { Play, RotateCw, Monitor, Smartphone, Tablet, Maximize2, Minimize2, ExternalLink, Expand } from 'lucide-react';
+import { playClickSound } from '../utils/soundFX';
 import './SandboxEmbed.css';
 
 /**
@@ -13,8 +14,9 @@ import './SandboxEmbed.css';
  * @param {Object} props
  * @param {string} props.demoUrl - Live Vercel app URL.
  * @param {string} props.title - App title header.
+ * @param {Function} [props.onOpenFullscreen] - Handler to open 100% full-screen modal.
  */
-export const SandboxEmbed = ({ demoUrl, title }) => {
+export const SandboxEmbed = ({ demoUrl, title, onOpenFullscreen }) => {
   const [isEmbedLoaded, setIsEmbedLoaded] = useState(false);
   const [deviceFrame, setDeviceFrame] = useState('desktop'); // 'desktop' | 'tablet' | 'mobile'
   const [isExpanded, setIsExpanded] = useState(false);
@@ -35,6 +37,20 @@ export const SandboxEmbed = ({ demoUrl, title }) => {
         </div>
 
         <div className="sandbox-viewport-controls">
+          {onOpenFullscreen && (
+            <button
+              className="device-btn active"
+              onClick={() => {
+                playClickSound();
+                onOpenFullscreen();
+              }}
+              title="Open 100% Fullscreen Interactive Viewport"
+              style={{ background: '#38bdf8', color: '#041220', fontWeight: 800 }}
+            >
+              <Expand size={14} /> <span>100% Fullscreen Sandbox</span>
+            </button>
+          )}
+
           <button
             className={`device-btn ${deviceFrame === 'desktop' ? 'active' : ''}`}
             onClick={() => setDeviceFrame('desktop')}
@@ -101,3 +117,4 @@ export const SandboxEmbed = ({ demoUrl, title }) => {
     </div>
   );
 };
+
