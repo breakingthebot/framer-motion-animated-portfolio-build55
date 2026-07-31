@@ -9,18 +9,59 @@ import { HeroSection } from './components/HeroSection';
 import { ProjectCard } from './components/ProjectCard';
 import { ProjectModal } from './components/ProjectModal';
 import { CategoryFilter } from './components/CategoryFilter';
-import { buildsList, portfolioStats } from './data/buildsData';
-import { Code2, Layers, CheckCircle, ExternalLink, Github } from 'lucide-react';
+import { SearchBar } from './components/SearchBar';
+import { buildsList } from './data/buildsData';
+import { Code2, Layers, ExternalLink, Github } from 'lucide-react';
 import './App.css';
 
 export function App() {
   const [activeSection, setActiveSection] = useState('featured');
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTech, setSelectedTech] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
 
+  const handleTechToggle = (tech) => {
+    setSelectedTech((prev) =>
+      prev.includes(tech) ? prev.filter((t) => t !== tech) : [...prev, tech]
+    );
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery('');
+    setSelectedTech([]);
+    setSelectedCategory('All Categories');
+  };
+
   const filteredBuilds = buildsList.filter((b) => {
-    if (selectedCategory === 'All Categories') return true;
-    return b.category === selectedCategory;
+    // 1. Category Filter
+    if (selectedCategory !== 'All Categories' && b.category !== selectedCategory) {
+      return false;
+    }
+
+    // 2. Search Query Filter
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      const matchTitle = b.title.toLowerCase().includes(q);
+      const matchDesc = b.description.toLowerCase().includes(q);
+      const matchCat = b.category.toLowerCase().includes(q);
+      const matchBuild = `build ${b.buildNumber}`.includes(q) || `#${b.buildNumber}`.includes(q);
+      const matchTech = b.tech.some((t) => t.toLowerCase().includes(q));
+
+      if (!matchTitle && !matchDesc && !matchCat && !matchBuild && !matchTech) {
+        return false;
+      }
+    }
+
+    // 3. Tech Stack Chips Filter
+    if (selectedTech.length > 0) {
+      const hasAllTech = selectedTech.every((st) =>
+        b.tech.some((t) => t.toLowerCase().includes(st.toLowerCase()))
+      );
+      if (!hasAllTech) return false;
+    }
+
+    return true;
   });
 
   return (
@@ -33,7 +74,7 @@ export function App() {
 
       {/* MAIN CONTAINER */}
       <main className="main-content">
-        {/* SECTION 1: CATALOG & FILTER STRIP */}
+        {/* SECTION 1: CATALOG & SEARCH BAR */}
         <section id="catalog" className="section-container">
           <div className="section-header">
             <h2 className="section-title">
@@ -44,22 +85,44 @@ export function App() {
             </span>
           </div>
 
+          {/* SEARCH & TECH FILTER BAR (NEW v1.1.0) */}
+          <SearchBar
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            selectedTech={selectedTech}
+            onTechToggle={handleTechToggle}
+            onClearFilters={handleClearFilters}
+          />
+
           <CategoryFilter
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
           />
 
-          <motion.div className="projects-grid" layout>
-            <AnimatePresence mode="popLayout">
-              {filteredBuilds.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onSelect={setSelectedProject}
-                />
-              ))}
-            </AnimatePresence>
-          </motion.div>
+          {filteredBuilds.length === 0 ? (
+            <motion.div
+              className="empty-search-state"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              <p>No builds match your active search filters.</p>
+              <button className="reset-search-btn" onClick={handleClearFilters}>
+                Reset Search Filters
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div className="projects-grid" layout>
+              <AnimatePresence mode="popLayout">
+                {filteredBuilds.map((project) => (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    onSelect={setSelectedProject}
+                  />
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          )}
         </section>
 
         {/* SECTION 2: TECH STACK MATRIX (SCROLL ANIMATED) */}
