@@ -50,6 +50,26 @@
   flex-wrap: wrap;
 }
 
+.export-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #34d399;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.export-trigger-btn:hover {
+  background: rgba(52, 211, 153, 0.25);
+  transform: translateY(-1px);
+}
+
 .compare-trigger-btn {
   display: inline-flex;
   align-items: center;

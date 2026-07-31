@@ -13,9 +13,10 @@ import { SearchBar } from './components/SearchBar';
 import { SkillRadar } from './components/SkillRadar';
 import { TimelineView } from './components/TimelineView';
 import { CompareModal } from './components/CompareModal';
+import { PortfolioExport } from './components/PortfolioExport';
 import { ParticleCanvas } from './components/ParticleCanvas';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft } from 'lucide-react';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download } from 'lucide-react';
 import './App.css';
 
 export function App() {
@@ -25,6 +26,7 @@ export function App() {
   const [selectedTech, setSelectedTech] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
   const [isCompareOpen, setIsCompareOpen] = useState(false);
+  const [isExportOpen, setIsExportOpen] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
   const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
 
@@ -105,6 +107,14 @@ export function App() {
             </h2>
 
             <div className="header-right-actions">
+              {/* EXPORT PORTFOLIO BUTTON (NEW v1.7.0) */}
+              <button
+                className="export-trigger-btn"
+                onClick={() => setIsExportOpen(true)}
+              >
+                <Download size={14} /> Export Dataset
+              </button>
+
               {/* COMPARE BUILDS BUTTON (NEW v1.4.0) */}
               <button
                 className="compare-trigger-btn"
@@ -252,6 +262,12 @@ export function App() {
         isOpen={isCompareOpen}
         onClose={() => setIsCompareOpen(false)}
         builds={buildsList}
+      />
+
+      {/* EXPORT PORTFOLIO MODAL (NEW v1.7.0) */}
+      <PortfolioExport
+        isOpen={isExportOpen}
+        onClose={() => setIsExportOpen(false)}
       />
     </div>
   );
