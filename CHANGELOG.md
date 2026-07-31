@@ -5,6 +5,12 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [2.0.0] - 2026-07-31
+
+### Added
+- Integrated **Authentic Senior Engineering Executive Bio & Factual Scale Metrics (`ExecutiveHero.jsx`, `ExecutiveHero.css`)**.
+- Built 100% factually accurate executive hero section featuring green pulsing availability status badge, authentic metric cards (*55 Completed Open-Source Builds*, *34 Live Deployed Vercel Web Apps*, *10 Core Stacks*, *100% Verified Build Success Rate*), tech stack pills, and export triggers.
+
 ## [1.19.0] - 2026-07-31
 
 ### Added

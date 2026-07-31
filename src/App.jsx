@@ -144,7 +144,10 @@ export function App() {
       />
 
       {/* HERO BANNER */}
-      <HeroSection />
+      <HeroSection
+        onOpenExport={() => setIsExportOpen(true)}
+        onOpenCmdPalette={() => setIsCmdPaletteOpen(true)}
+      />
 
       {/* MAIN CONTAINER */}
       <main className="main-content">
