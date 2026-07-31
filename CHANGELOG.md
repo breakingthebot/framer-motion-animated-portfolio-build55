@@ -5,13 +5,17 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html).
 
+## [1.2.0] - 2026-07-31
+
+### Added
+- Integrated **Animated Interactive Skill Radar & Progress Gauges (`SkillRadar.jsx`)**.
+- Added 6-axis SVG radar polygon visualization (UI Libraries, Web Apps, Micro-frontends, Minimal JS/HTMX, CLI Tools, Systems Languages) with hover tooltip indicators.
+- Added animated progress gauges (React 19 & Ecosystem 94%, CSS & UI Architectures 92%, Web Components & HTMX 84%, Backend Engines 88%) triggered by Framer Motion `whileInView`.
+
 ## [1.1.0] - 2026-07-31
 
 ### Added
 - Integrated **Interactive Search & Tech Stack Multi-Filter Bar (`SearchBar.jsx`)**.
-- Added real-time text query search across build numbers, project titles, descriptions, categories, and tech stack tags.
-- Added multi-select technology filter chips (`React 19`, `Vue 3`, `Svelte 5`, `Lit 3.x`, `HTMX`, `Alpine.js 3.x`, `styled-components`, `TailwindCSS v3`, `React Native Expo`).
-- Added smooth Framer Motion empty search state with one-click filter resets.
 
 ## [1.0.0] - 2026-07-31
 

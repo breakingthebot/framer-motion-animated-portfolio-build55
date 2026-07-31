@@ -10,6 +10,7 @@ import { ProjectCard } from './components/ProjectCard';
 import { ProjectModal } from './components/ProjectModal';
 import { CategoryFilter } from './components/CategoryFilter';
 import { SearchBar } from './components/SearchBar';
+import { SkillRadar } from './components/SkillRadar';
 import { buildsList } from './data/buildsData';
 import { Code2, Layers, ExternalLink, Github } from 'lucide-react';
 import './App.css';
@@ -161,6 +162,9 @@ export function App() {
               <p>Python (async/data), Go, Rust, C#, Java, Swift, Kotlin, Lua, Node.js Express</p>
             </div>
           </div>
+
+          {/* SKILL RADAR & PROGRESS GAUGES (NEW v1.2.0) */}
+          <SkillRadar />
         </motion.section>
       </main>
 
