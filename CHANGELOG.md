@@ -5,12 +5,17 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html).
 
+## [1.3.0] - 2026-07-31
+
+### Added
+- Integrated **Framer Motion Animated Timeline View (`TimelineView.jsx`)**.
+- Added view mode toggle control (`Grid View` vs `Timeline View`) in catalog header.
+- Added vertical gradient timeline track with glowing node dots, date timestamps, technology chips, and Framer Motion staggered entrance animations (`staggerChildren`).
+
 ## [1.2.0] - 2026-07-31
 
 ### Added
 - Integrated **Animated Interactive Skill Radar & Progress Gauges (`SkillRadar.jsx`)**.
-- Added 6-axis SVG radar polygon visualization (UI Libraries, Web Apps, Micro-frontends, Minimal JS/HTMX, CLI Tools, Systems Languages) with hover tooltip indicators.
-- Added animated progress gauges (React 19 & Ecosystem 94%, CSS & UI Architectures 92%, Web Components & HTMX 84%, Backend Engines 88%) triggered by Framer Motion `whileInView`.
 
 ## [1.1.0] - 2026-07-31
 

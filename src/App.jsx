@@ -11,8 +11,9 @@ import { ProjectModal } from './components/ProjectModal';
 import { CategoryFilter } from './components/CategoryFilter';
 import { SearchBar } from './components/SearchBar';
 import { SkillRadar } from './components/SkillRadar';
+import { TimelineView } from './components/TimelineView';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github } from 'lucide-react';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit } from 'lucide-react';
 import './App.css';
 
 export function App() {
@@ -21,6 +22,7 @@ export function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTech, setSelectedTech] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
 
   const handleTechToggle = (tech) => {
     setSelectedTech((prev) =>
@@ -81,9 +83,30 @@ export function App() {
             <h2 className="section-title">
               <Code2 className="title-icon" /> 246 Build Index &amp; Repository Showcase
             </h2>
-            <span className="build-count-badge">
-              Showing {filteredBuilds.length} Featured Repos
-            </span>
+
+            <div className="header-right-actions">
+              <span className="build-count-badge">
+                Showing {filteredBuilds.length} Featured Repos
+              </span>
+
+              {/* VIEW MODE TOGGLE (NEW v1.3.0) */}
+              <div className="view-mode-toggle">
+                <button
+                  className={`view-btn ${viewMode === 'grid' ? 'active' : ''}`}
+                  onClick={() => setViewMode('grid')}
+                  title="Grid View"
+                >
+                  <LayoutGrid size={15} /> Grid
+                </button>
+                <button
+                  className={`view-btn ${viewMode === 'timeline' ? 'active' : ''}`}
+                  onClick={() => setViewMode('timeline')}
+                  title="Timeline View"
+                >
+                  <GitCommit size={15} /> Timeline
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* SEARCH & TECH FILTER BAR (NEW v1.1.0) */}
@@ -111,6 +134,11 @@ export function App() {
                 Reset Search Filters
               </button>
             </motion.div>
+          ) : viewMode === 'timeline' ? (
+            <TimelineView
+              projects={filteredBuilds}
+              onSelect={setSelectedProject}
+            />
           ) : (
             <motion.div className="projects-grid" layout>
               <AnimatePresence mode="popLayout">
