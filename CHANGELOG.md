@@ -5,6 +5,13 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.15.0] - 2026-07-31
+
+### Added
+- Integrated **Keyboard Shortcuts & Command Palette Quick Navigator (`CommandPalette.jsx`, `CommandPalette.css`)**.
+- Added global `Cmd+K` / `Ctrl+K` keydown listener to trigger the command runner overlay from anywhere in the app.
+- Added keyboard selection navigation (`Up`/`Down`/`Enter`/`Esc`), live search across 55 builds, and quick system action shortcuts.
+
 ## [1.14.0] - 2026-07-31
 
 ### Added

@@ -4,7 +4,7 @@
 [![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/breakingthebot/framer-motion-animated-portfolio-build55)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Framer Motion](https://img.shields.io/badge/Framer--Motion-Animations-0055FF?style=for-the-badge&logo=framer)](https://framer.com/motion)
-[![Release](https://img.shields.io/badge/Release-v1.14.0-indigo?style=for-the-badge)](CHANGELOG.md)
+[![Release](https://img.shields.io/badge/Release-v1.15.0-indigo?style=for-the-badge)](CHANGELOG.md)
 
 ---
 
@@ -12,7 +12,7 @@
 
 **Framer Motion Animated Portfolio (Build 55)** is an interactive, theme-switchable glassmorphism portfolio application engineered with **React 19**, **Framer Motion**, and **Vite** celebrating the entire **246 Daily Coding Builds** ecosystem.
 
-Designed to showcase the broad portfolio of daily coding builds—ranging from React, Vue 3, Svelte 5, Angular, and Lit 3.x Web Components to HTMX, Alpine.js, styled-components, Python, Go, and Rust—this application delivers dynamic Framer Motion page transitions, Web Audio API UI sound design effects (`soundFX.js`, `SoundToggle.jsx`), ecosystem analytics & tech stack distribution matrices (`AnalyticsModal.jsx`), bookmarked build playlists & custom collection builders (`CollectionsModal.jsx`), live interactive iframe component sandboxes, JSON & PDF portfolio summary export generators, code snippet architecture inspectors, theme mode switching (Cyberpunk Dark & Neon Light), ambient particle canvas backgrounds, side-by-side repository comparison matrices, real-time live search & tech stack multi-filtering, animated skill radar charts & progress gauges, chronological timeline feed views, scroll animations, layout reordering, hover scale/tilt card physics, and interactive modal overlays.
+Designed to showcase the broad portfolio of daily coding builds—ranging from React, Vue 3, Svelte 5, Angular, and Lit 3.x Web Components to HTMX, Alpine.js, styled-components, Python, Go, and Rust—this application delivers dynamic Framer Motion page transitions, Cmd+K / Ctrl+K command palette quick navigator (`CommandPalette.jsx`), Web Audio API UI sound design effects (`soundFX.js`, `SoundToggle.jsx`), ecosystem analytics & tech stack distribution matrices (`AnalyticsModal.jsx`), bookmarked build playlists & custom collection builders (`CollectionsModal.jsx`), live interactive iframe component sandboxes, JSON & PDF portfolio summary export generators, code snippet architecture inspectors, theme mode switching (Cyberpunk Dark & Neon Light), ambient particle canvas backgrounds, side-by-side repository comparison matrices, real-time live search & tech stack multi-filtering, animated skill radar charts & progress gauges, chronological timeline feed views, scroll animations, layout reordering, hover scale/tilt card physics, and interactive modal overlays.
 
 ### 🌐 Live Production & Repository Links
 - **Live Vercel Application**: [https://framer-motion-animated-portfolio-build55.vercel.app](https://framer-motion-animated-portfolio-build55.vercel.app)
@@ -29,6 +29,8 @@ Build_55/
 │   ├── components/
 │   │   ├── Navbar.jsx             # Glassmorphic floating nav with layoutId pills & audio toggle
 │   │   ├── Navbar.css
+│   │   ├── CommandPalette.jsx     # Cmd+K / Ctrl+K quick command runner modal
+│   │   ├── CommandPalette.css
 │   │   ├── SoundToggle.jsx        # Global Web Audio sound effects mute/unmute toggle
 │   │   ├── SoundToggle.css
 │   │   ├── ThemeSwitcher.jsx      # Framer Motion sliding theme mode toggle button
@@ -84,24 +86,27 @@ Build_55/
 
 ## 🧩 Key Features
 
-1. **🔊 Web Audio API Micro-interaction Sound Design (`soundFX.js`, `SoundToggle.jsx`)**:
-   - Zero-dependency Web Audio API synthesizer producing tactile audio feedback for button clicks, heart bookmarks, tab navigation swooshes, theme laser sweeps, and modal spring pops. Features global mute state control in `Navbar.jsx` with `localStorage` persistence.
-2. **📊 Build Analytics & Tech Distribution Matrix (`AnalyticsModal.jsx`)**:
+1. **⌨️ Keyboard Shortcuts & Command Palette (`CommandPalette.jsx`)**:
+   - Global `Cmd+K` / `Ctrl+K` command runner overlay for power users. Supports live search across all 55 builds, keyboard navigation (`Up`/`Down`/`Enter`/`Esc`), and quick system action triggers.
+2. **🔊 Web Audio API Micro-interaction Sound Design (`soundFX.js`, `SoundToggle.jsx`)**:
+   - Zero-dependency Web Audio API synthesizer producing tactile audio feedback for button clicks, heart bookmarks, tab navigation swooshes, theme laser sweeps, and modal spring pops.
+3. **📊 Build Analytics & Tech Distribution Matrix (`AnalyticsModal.jsx`)**:
    - Interactive data visualizer modal computing real-time ecosystem stats: technology stack frequency, domain category breakdown, total integrations, flagship showcase counts, and architecture depth badges.
-3. **❤️ Bookmarked Builds & Playlists Manager (`CollectionsModal.jsx`)**:
+4. **❤️ Bookmarked Builds & Playlists Manager (`CollectionsModal.jsx`)**:
    - Save favorite builds with heart bookmark buttons on cards or inside project detail modals. Organize saved builds into custom named playlists, export JSON backups, and copy formatted Markdown summaries.
-4. **🎮 Live App Interactive Sandbox Embed (`SandboxEmbed.jsx`)**:
+5. **🎮 Live App Interactive Sandbox Embed (`SandboxEmbed.jsx`)**:
    - Embedded iframe sandbox widget inside `ProjectModal.jsx` allowing users to interact with live deployed web applications without leaving the modal. Features responsive device viewports, iframe refresh triggers, and loading spinners.
-5. **🏷️ Portfolio JSON & PDF Exporter (`PortfolioExport.jsx`)**:
+6. **🏷️ Portfolio JSON & PDF Exporter (`PortfolioExport.jsx`)**:
    - Instant browser blob downloader exporting complete structured JSON metadata for all repositories, GitHub links, and live Vercel deployments. Printable PDF summary sheet generator.
-6. **💻 Code Snippet Architecture Inspector (`CodeInspector.jsx`)**:
+7. **💻 Code Snippet Architecture Inspector (`CodeInspector.jsx`)**:
    - Collapsible code snippet inspector inside `ProjectModal.jsx` showcasing component imports, design tokens, and architectural pattern highlights with one-click copy feedback.
-7. **🌙 Theme Switcher & Particle Canvas (`ThemeSwitcher.jsx`, `ParticleCanvas.jsx`)**:
+8. **🌙 Theme Switcher & Particle Canvas (`ThemeSwitcher.jsx`, `ParticleCanvas.jsx`)**:
    - Framer Motion sliding theme toggle switching between **Cyberpunk Dark** and **Neon Light** modes. Floating HTML5 canvas ambient particle background.
-8. **🎛️ Side-by-Side Build Comparison Matrix (`CompareModal.jsx`)**:
+9. **🎛️ Side-by-Side Build Comparison Matrix (`CompareModal.jsx`)**:
    - Interactive modal allowing users to select any 2 builds from the 246 series dropdown selectors and compare build numbers, title headers, categories, architecture depth, tech stacks, GitHub repos, and live deployments.
-9. **📇 Framer Motion Animated Timeline View (`TimelineView.jsx`)**:
+10. **📇 Framer Motion Animated Timeline View (`TimelineView.jsx`)**:
    - Vertical timeline milestone feed with glowing node dots, build numbers, depth tags, title headers, technology chips, and live links.
+
 
 ---
 

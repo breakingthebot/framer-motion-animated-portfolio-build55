@@ -18,8 +18,9 @@ import { PortfolioExport } from './components/PortfolioExport';
 import { ParticleCanvas } from './components/ParticleCanvas';
 import { CollectionsModal } from './components/CollectionsModal';
 import { AnalyticsModal } from './components/AnalyticsModal';
+import { CommandPalette } from './components/CommandPalette';
 import { buildsList } from './data/buildsData';
-import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3 } from 'lucide-react';
+import { Code2, Layers, ExternalLink, Github, LayoutGrid, GitCommit, ArrowRightLeft, Download, Bookmark, BarChart3, Command } from 'lucide-react';
 import './App.css';
 
 /**
@@ -35,6 +36,7 @@ export function App() {
   const [isExportOpen, setIsExportOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
+  const [isCmdPaletteOpen, setIsCmdPaletteOpen] = useState(false);
   const [onlyBookmarked, setOnlyBookmarked] = useState(false);
   const [viewMode, setViewMode] = useState('grid'); // 'grid' | 'timeline'
   const [themeMode, setThemeMode] = useState('cyber-dark'); // 'cyber-dark' | 'neon-light'
@@ -44,6 +46,18 @@ export function App() {
     const saved = localStorage.getItem('build_55_bookmarks');
     return saved ? JSON.parse(saved) : [55, 54, 50];
   });
+
+  // Global Cmd+K / Ctrl+K Keydown listener
+  useEffect(() => {
+    const handleGlobalKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsCmdPaletteOpen((prev) => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', themeMode);
@@ -126,6 +140,7 @@ export function App() {
         setActiveSection={setActiveSection}
         themeMode={themeMode}
         onToggleTheme={toggleTheme}
+        onOpenCmdPalette={() => setIsCmdPaletteOpen(true)}
       />
 
       {/* HERO BANNER */}
@@ -141,6 +156,15 @@ export function App() {
             </h2>
 
             <div className="header-right-actions">
+              {/* CMD+K QUICK NAVIGATOR BUTTON (NEW v1.15.0) */}
+              <button
+                className="cmd-trigger-btn"
+                onClick={() => setIsCmdPaletteOpen(true)}
+                title="Open Command Palette (Cmd+K / Ctrl+K)"
+              >
+                <Command size={14} /> ⌘K Quick Nav
+              </button>
+
               {/* ANALYTICS & STATS MATRIX BUTTON (NEW v1.10.0) */}
               <button
                 className="analytics-trigger-btn"
@@ -341,6 +365,19 @@ export function App() {
         isOpen={isAnalyticsOpen}
         onClose={() => setIsAnalyticsOpen(false)}
         builds={buildsList}
+      />
+
+      {/* CMD+K COMMAND PALETTE QUICK NAVIGATOR MODAL (NEW v1.15.0) */}
+      <CommandPalette
+        isOpen={isCmdPaletteOpen}
+        onClose={() => setIsCmdPaletteOpen(false)}
+        builds={buildsList}
+        onSelectProject={setSelectedProject}
+        onToggleTheme={toggleTheme}
+        onOpenAnalytics={() => setIsAnalyticsOpen(true)}
+        onOpenPlaylists={() => setIsCollectionsOpen(true)}
+        onOpenExport={() => setIsExportOpen(true)}
+        themeMode={themeMode}
       />
     </div>
   );
