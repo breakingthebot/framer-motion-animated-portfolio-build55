@@ -5,6 +5,14 @@ All notable changes to **Build 55 (Framer Motion Animated Portfolio — 246 Buil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v1.8.0.html).
 
+## [1.18.0] - 2026-07-31
+
+### Added
+- Integrated **Live Production App Deployment Links for Enterprise Case Studies (`caseStudiesData.js`)**.
+- Connected Case Study 1 to Build 52 ApexAdmin Dashboard (`https://tailwind-admin-dashboard-build52.vercel.app`).
+- Connected Case Study 2 to Build 53 ModulaUI Library (`https://react-css-modules-library-build53-pvl71zvas.vercel.app`).
+- Connected Case Study 3 to Build 54 Styled Components UI Kit (`https://styled-components-theme-uikit-build54.vercel.app`).
+
 ## [1.17.0] - 2026-07-31
 
 ### Added

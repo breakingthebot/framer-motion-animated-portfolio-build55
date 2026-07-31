@@ -1,5 +1,5 @@
 // src/data/caseStudiesData.js
-// Enterprise case studies dataset with architecture diagrams and scale metrics.
+// Enterprise case studies dataset with architecture diagrams, scale metrics, and verified live app links.
 // Connects to: src/components/CaseStudyModal.jsx, src/App.jsx
 // Created: 2026-07-31
 
@@ -43,8 +43,8 @@ func (g *Gateway) HandleRequest(w http.ResponseWriter, r *http.Request) {
         g.fallbackQueue.Push(event)
     }
 }`,
-    demoUrl: 'https://framer-motion-animated-portfolio-bu.vercel.app',
-    githubUrl: 'https://github.com/breakingthebot/286-builds'
+    demoUrl: 'https://tailwind-admin-dashboard-build52.vercel.app',
+    githubUrl: 'https://github.com/breakingthebot/build-52'
   },
   {
     id: 'cs-2',
@@ -81,8 +81,8 @@ yNodes.observe((event) => {
     requestAnimationFrame(() => updateCanvasViewport(yNodes.toArray()));
   });
 });`,
-    demoUrl: 'https://framer-motion-animated-portfolio-bu.vercel.app',
-    githubUrl: 'https://github.com/breakingthebot/framer-motion-animated-portfolio-build55'
+    demoUrl: 'https://react-css-modules-library-build53-pvl71zvas.vercel.app',
+    githubUrl: 'https://github.com/breakingthebot/build-53'
   },
   {
     id: 'cs-3',
@@ -126,7 +126,7 @@ export class EnterpriseCard extends LitElement {
     return html\`<slot></slot>\`;
   }
 }`,
-    demoUrl: 'https://framer-motion-animated-portfolio-bu.vercel.app',
-    githubUrl: 'https://github.com/breakingthebot/lit3-component-library-build54'
+    demoUrl: 'https://styled-components-theme-uikit-build54.vercel.app',
+    githubUrl: 'https://github.com/breakingthebot/build-54'
   }
 ];
